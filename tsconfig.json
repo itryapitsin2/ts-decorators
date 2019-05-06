@@ -2,14 +2,12 @@
     "compilerOptions": {
         "sourceMap": true,
         "target": "es5",
-        "jsx": "react",
         "allowJs": true,
         "module": "ESNext",
         "moduleResolution": "node",
         "emitDecoratorMetadata": true,
         "allowSyntheticDefaultImports": true,
         "experimentalDecorators": true,
-        //    "declaration": true,
         "noImplicitAny": false,
         "noImplicitReturns": false,
         "removeComments": true,
@@ -17,7 +15,6 @@
         "resolveJsonModule": true,
         "esModuleInterop": true,
         "downlevelIteration": true,
-        "declarations": true,
         "outDir": "build",
         "lib": [
             "es6",
@@ -31,7 +28,6 @@
         "node_modules"
     ],
     "files": [
-        "src/index.tsx",
-        "declaration.d.ts"
+        "src/index.ts"
     ]
 }

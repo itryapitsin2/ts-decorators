@@ -1,14 +1,24 @@
-import "reflect-metadata";
-import {Lambda1} from "./types";
+import 'reflect-metadata';
+import { IsString, Lambda1 } from './types';
 
 type StringLengthMetadataType = {
-    idx: number,
-    length: number
-}
+    idx: number;
+    length: number;
+};
 
-const requiredMetadataKey = Symbol("required");
-const maxLengthMetadataKey = Symbol("max-length");
-const minLengthMetadataKey = Symbol("min-length");
+type RegexMetadataType = {
+    idx: number;
+    regex: RegExp;
+};
+
+const requiredMetadataKey = Symbol('required');
+const maxLengthMetadataKey = Symbol('max-length');
+const minLengthMetadataKey = Symbol('min-length');
+const regexMetadataKey = Symbol('regex');
+
+export interface RuleFunction {
+    (target: any, propertyName: string | symbol, args: IArguments): void;
+}
 
 /**
  * Protect function parameter from null or undefined
@@ -16,32 +26,35 @@ const minLengthMetadataKey = Symbol("min-length");
  * @param propertyKey A method name
  * @param parameterIndex Index number of decorated parameter
  */
-function notNull(target: any,
-                 propertyKey: string | symbol,
-                 parameterIndex: number) {
-    let existingRequiredParameters: number[] = Reflect.getOwnMetadata(requiredMetadataKey, target, propertyKey) || [];
+export function notNull(target: any, propertyKey: string | symbol, parameterIndex: number) {
+    let existingRequiredParameters: number[] =
+        Reflect.getOwnMetadata(requiredMetadataKey, target, propertyKey) || [];
     existingRequiredParameters.push(parameterIndex);
     Reflect.defineMetadata(requiredMetadataKey, existingRequiredParameters, target, propertyKey);
+}
+
+/**
+ * String parameter should not be empty
+ */
+export function notEmptyString() {
+    return minLength(1);
 }
 
 /**
  * Protect function parameter from minimal string length
  * @param min: minimum value of string length
  */
-function minLength(min: number): ParameterDecorator {
-    return (target: Object,
-            propertyKey: string | symbol,
-            parameterIndex: number): void => {
-        let existingMinLengthParameters: StringLengthMetadataType[] = Reflect.getOwnMetadata(
-            minLengthMetadataKey,
-            target,
-            propertyKey) || [];
-        existingMinLengthParameters.push({idx: parameterIndex, length: min});
+export function minLength(min: number): ParameterDecorator {
+    return (target: Object, propertyKey: string | symbol, parameterIndex: number): void => {
+        let existingMinLengthParameters: StringLengthMetadataType[] =
+            Reflect.getOwnMetadata(minLengthMetadataKey, target, propertyKey) || [];
+        existingMinLengthParameters.push({ idx: parameterIndex, length: min });
         Reflect.defineMetadata(
             minLengthMetadataKey,
             existingMinLengthParameters,
             target,
-            propertyKey);
+            propertyKey,
+        );
     };
 }
 
@@ -49,20 +62,50 @@ function minLength(min: number): ParameterDecorator {
  * Protect function parameter from maximal string length
  * @param max: maximum value of string length
  */
-function maxLength(max: number): ParameterDecorator {
-    return (target: Object,
-            propertyKey: string | symbol,
-            parameterIndex: number): void => {
-        let existingMaxLengthParameters: StringLengthMetadataType[] = Reflect.getOwnMetadata(
-            maxLengthMetadataKey,
-            target,
-            propertyKey) || [];
-        existingMaxLengthParameters.push({idx: parameterIndex, length: max});
+export function maxLength(max: number): ParameterDecorator {
+    return (target: Object, propertyKey: string | symbol, parameterIndex: number): void => {
+        let existingMaxLengthParameters: StringLengthMetadataType[] =
+            Reflect.getOwnMetadata(maxLengthMetadataKey, target, propertyKey) || [];
+        existingMaxLengthParameters.push({ idx: parameterIndex, length: max });
         Reflect.defineMetadata(
             maxLengthMetadataKey,
             existingMaxLengthParameters,
             target,
-            propertyKey);
+            propertyKey,
+        );
+    };
+}
+
+/**
+ * Test a parameter that must matching a pattern
+ * @param regex RegExp instance or the regular expression literal
+ */
+export function regex(regex: RegExp | string): ParameterDecorator {
+    // @ts-ignore
+    const r: RegExp = IsString(regex) ? new RegExp(regex) : regex;
+
+    return (target: Object, propertyKey: string | symbol, parameterIndex: number): void => {
+        let existingRegexParameters: RegexMetadataType[] =
+            Reflect.getOwnMetadata(regexMetadataKey, target, propertyKey) || [];
+        existingRegexParameters.push({ idx: parameterIndex, regex: r });
+        Reflect.defineMetadata(regexMetadataKey, existingRegexParameters, target, propertyKey);
+    };
+}
+
+/**
+ * Test a parameter that must matching email pattern
+ */
+export function isEmail(): ParameterDecorator {
+    return regex('^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$');
+}
+
+function customValidator<T>(name: string, data?: T) {
+    const nameMetadataKey = Symbol(name);
+    return (target: Object, propertyKey: string | symbol, parameterIndex: number): void => {
+        let existingCustomParameters: T[] =
+            Reflect.getOwnMetadata(nameMetadataKey, target, propertyKey) || [];
+        existingCustomParameters.push({ ...data, idx: parameterIndex });
+        Reflect.defineMetadata(nameMetadataKey, existingCustomParameters, target, propertyKey);
     };
 }
 
@@ -72,14 +115,22 @@ function maxLength(max: number): ParameterDecorator {
  * @param propertyName A method name
  * @param args: A list of parameters in method
  */
-function validateNulls(target: any,
-                       propertyName: string | symbol,
-                       args: IArguments) {
-    let requiredParameters: number[] = Reflect.getOwnMetadata(requiredMetadataKey, target, propertyName);
+function validateNulls(target: any, propertyName: string | symbol, args: IArguments) {
+    let requiredParameters: number[] = Reflect.getOwnMetadata(
+        requiredMetadataKey,
+        target,
+        propertyName,
+    );
     if (requiredParameters) {
         for (let parameterIndex of requiredParameters) {
-            if (parameterIndex >= args.length || args[parameterIndex] === undefined || args[parameterIndex] === null) {
-                throw new Error(`Missing required argument at ${propertyName.toString()} ${parameterIndex}`);
+            if (
+                parameterIndex >= args.length ||
+                args[parameterIndex] === undefined ||
+                args[parameterIndex] === null
+            ) {
+                throw new Error(
+                    `Missing required argument at ${propertyName.toString()} ${parameterIndex}`,
+                );
             }
         }
     }
@@ -91,14 +142,20 @@ function validateNulls(target: any,
  * @param propertyName A method name
  * @param args A list of parameters in method
  */
-function validateMaxLength(target: any,
-                           propertyName: string | symbol,
-                           args: IArguments) {
-    let maxLengthParameters: StringLengthMetadataType[] = Reflect.getOwnMetadata(maxLengthMetadataKey, target, propertyName);
+function validateMaxLength(target: any, propertyName: string | symbol, args: IArguments) {
+    let maxLengthParameters: StringLengthMetadataType[] = Reflect.getOwnMetadata(
+        maxLengthMetadataKey,
+        target,
+        propertyName,
+    );
     if (maxLengthParameters) {
         for (let tpe of maxLengthParameters) {
-            if (tpe.idx >= args.length || typeof args[tpe.idx] !== "string" || args[tpe.idx].length > tpe.length) {
-                throw new Error("Incorrect string length");
+            if (
+                tpe.idx >= args.length ||
+                typeof args[tpe.idx] !== 'string' ||
+                args[tpe.idx].length > tpe.length
+            ) {
+                throw new Error('Incorrect string length');
             }
         }
     }
@@ -110,21 +167,62 @@ function validateMaxLength(target: any,
  * @param propertyName A method name
  * @param args A list of parameters in method
  */
-function validateMinLength(target: any,
-                           propertyName: string | symbol,
-                           args: IArguments) {
-    let minLengthParameters: StringLengthMetadataType[] = Reflect.getOwnMetadata(minLengthMetadataKey, target, propertyName);
+function validateMinLength(target: any, propertyName: string | symbol, args: IArguments) {
+    let minLengthParameters: StringLengthMetadataType[] = Reflect.getOwnMetadata(
+        minLengthMetadataKey,
+        target,
+        propertyName,
+    );
     if (minLengthParameters) {
         for (let tpe of minLengthParameters) {
-            if (tpe.idx >= args.length || typeof args[tpe.idx] !== "string" || args[tpe.idx].length <= tpe.length) {
-                throw new Error("A ");
+            if (
+                tpe.idx >= args.length ||
+                typeof args[tpe.idx] !== 'string' ||
+                args[tpe.idx].length <= tpe.length
+            ) {
+                throw new Error('A ');
             }
         }
     }
 }
 
 /**
- *
+ * Test decorated parameters for a pattern
+ * @param target A class of method
+ * @param propertyName A method name
+ * @param args A list of parameters in method
+ */
+function validateRegex(target: any, propertyName: string | symbol, args: IArguments) {
+    let regexMetadataTypes: RegexMetadataType[] = Reflect.getOwnMetadata(
+        regexMetadataKey,
+        target,
+        propertyName,
+    );
+    if (regexMetadataTypes) {
+        for (let tpe of regexMetadataTypes) {
+            if (
+                tpe.idx >= args.length ||
+                typeof args[tpe.idx] !== 'string' ||
+                tpe.regex.test(args[tpe.idx])
+            ) {
+                throw new Error('Failed regex at argument');
+            }
+        }
+    }
+}
+
+/**
+ * Container of rules
+ */
+export const rulePool: RuleFunction[] = [
+    validateNulls,
+    validateMaxLength,
+    validateMinLength,
+    validateRegex,
+];
+
+/**
+ * Validate method's arguments by rules from rulePool
  * @param target
  * @param propertyName
  * @param descriptor
@@ -132,15 +230,12 @@ function validateMinLength(target: any,
 export function validate(
     target: any,
     propertyName: string | symbol,
-    descriptor: PropertyDescriptor
+    descriptor: PropertyDescriptor,
 ) {
     let method = descriptor.value;
-    descriptor.value = function () {
-        console.log("Invoking descriptor");
-        validateNulls(target, propertyName, arguments);
-        validateMaxLength(target, propertyName, arguments);
-        validateMinLength(target, propertyName, arguments);
-
+    descriptor.value = function() {
+        const args = arguments;
+        rulePool.forEach(rule => rule(target, propertyName, args));
         return Reflect.apply(method, target, arguments);
     };
     return descriptor;
@@ -151,11 +246,7 @@ export function validate(
  * @param func: catch case handler
  */
 export function tryCatch(func: Lambda1<Error>) {
-    return function (
-        target: any,
-        propertyName: string | symbol,
-        descriptor: PropertyDescriptor
-    ) {
+    return function(target: any, propertyName: string | symbol, descriptor: PropertyDescriptor) {
         let method = descriptor.value;
         const args = arguments;
         descriptor.value = () => {
@@ -166,9 +257,12 @@ export function tryCatch(func: Lambda1<Error>) {
             }
         };
         return descriptor;
-    }
+    };
 }
 
 validate.notNull = notNull;
 validate.maxLength = maxLength;
 validate.minLength = minLength;
+validate.notEmptyString = notEmptyString;
+validate.regex = regex;
+validate.isEmail = isEmail;

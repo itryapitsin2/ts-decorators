@@ -1,6 +1,5 @@
 {
     "plugins": [
-        "react",
         "jest",
         "@typescript-eslint",
         "eslint-comments",
@@ -12,12 +11,10 @@
         "plugin:eslint-comments/recommended",
         "airbnb-typescript",
         "plugin:@typescript-eslint/recommended",
-        "plugin:react/recommended",
         "plugin:jest/recommended",
         "plugin:promise/recommended",
         "plugin:unicorn/recommended",
         "prettier",
-        "prettier/react",
         "prettier/@typescript-eslint"
     ],
     "env": {
@@ -28,16 +25,11 @@
         "jest": true
     },
     "globals": {
-        "commitHash": true,
-        "branchName": true,
         "require": true
     },
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
         "ecmaVersion": 6,
-        "ecmaFeatures": {
-            "jsx": true
-        },
         "sourceType": "module"
     },
     "rules": {
@@ -81,17 +73,6 @@
         "jest/no-focused-tests": "error",
         "jest/no-identical-title": "error",
         "jest/prefer-to-have-length": "warn",
-        "jest/valid-expect": "error",
-        "react/jsx-uses-react": "error",
-        "react/jsx-uses-vars": "error",
-        "react/jsx-indent": "off",
-        "react/jsx-indent-props": "off",
-        "react/destructuring-assignment": "off",
-        "react/prefer-stateless-function": [
-            "off",
-            {
-                "ignorePureComponents": true
-            }
-        ]
+        "jest/valid-expect": "error"
     }
 }
