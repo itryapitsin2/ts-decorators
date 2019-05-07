@@ -36,9 +36,9 @@ export function notNull(target: any, propertyKey: string | symbol, parameterInde
 /**
  * String parameter should not be empty
  */
-export function notEmptyString() {
+export const notEmptyString = () => {
     return minLength(1);
-}
+};
 
 /**
  * Protect function parameter from minimal string length
@@ -180,7 +180,7 @@ function validateMinLength(target: any, propertyName: string | symbol, args: IAr
                 typeof args[tpe.idx] !== 'string' ||
                 args[tpe.idx].length <= tpe.length
             ) {
-                throw new Error('A ');
+                throw new Error('String is short');
             }
         }
     }
@@ -203,7 +203,7 @@ function validateRegex(target: any, propertyName: string | symbol, args: IArgume
             if (
                 tpe.idx >= args.length ||
                 typeof args[tpe.idx] !== 'string' ||
-                tpe.regex.test(args[tpe.idx])
+                !tpe.regex.test(args[tpe.idx])
             ) {
                 throw new Error('Failed regex at argument');
             }
