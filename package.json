@@ -10,7 +10,7 @@
         "test": "jest",
         "test:watch": "npm test -- --watch",
         "setup": "npm install",
-        "coveralls": "cat ./coverage/lcov/lcov.info | ./node_modules/.bin/coveralls"
+        "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls"
     },
     "repository": {
         "type": "git",
@@ -43,7 +43,8 @@
         "jest": "^24.1.0",
         "prettier": "^1.17.0",
         "ts-jest": "^24.0.2",
-        "typescript": "^3.4.5"
+        "typescript": "^3.4.5",
+        "coveralls": "^3.0.1"
     },
     "dependencies": {
         "reflect-metadata": "^0.1.13"
