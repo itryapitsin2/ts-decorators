@@ -17,7 +17,7 @@ describe('@validator decorator test', () => {
             'Missing required argument at testMethod 0',
         );
 
-        testClass.testMethod("not null string")
+        testClass.testMethod('not null string');
     });
 
     test('Check maxLength decorator', () => {
@@ -89,7 +89,7 @@ describe('@validator decorator test', () => {
 
         const testClass = new TestClass();
         testClass.throwError();
-        expect(logger).toBeCalled();
+        expect(logger).toHaveBeenCalled();
     });
 
     test('Check isEmail decorator', () => {

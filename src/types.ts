@@ -1,33 +1,34 @@
+
 // 6.1.1 The Undefined Type
 // https://tc39.github.io/ecma262/#sec-ecmascript-language-types-undefined-type
-export function IsUndefined(x: any) {
+export function IsUndefined(x: any): boolean {
     return x === undefined;
 }
 // 6.1.2 The Null Type
 // https://tc39.github.io/ecma262/#sec-ecmascript-language-types-null-type
-export function IsNull(x: any) {
+export function IsNull(x: any): boolean {
     return x === null;
 }
 // 6.1.5 The Symbol Type
 // https://tc39.github.io/ecma262/#sec-ecmascript-language-types-symbol-type
-export function IsSymbol(x: any) {
+export function IsSymbol(x: any): boolean {
     return typeof x === 'symbol';
 }
 // 6.1.7 The Object Type
 // https://tc39.github.io/ecma262/#sec-object-type
-export function IsObject(x: any) {
+export function IsObject(x: any): boolean {
     return typeof x === 'object' ? x !== null : typeof x === 'function';
 }
 
-export function IsFunction(x: any) {
+export function IsFunction(x: any): boolean {
     return typeof x === 'function';
 }
 
-export function IsString(x: any) {
+export function IsString(x: any): boolean {
     return typeof x === 'string';
 }
 
-export function IsNumber(x: any) {
+export function IsNumber(x: any): boolean {
     return typeof x === 'number';
 }
 

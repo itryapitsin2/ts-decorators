@@ -4,7 +4,7 @@
  * @param key
  * @param index
  */
-import {INFO_COLOR} from "./types";
+import {INFO_COLOR} from '../types';
 
 export function logParameter(target: any, key: string, index: number) {
     const metadataKey = `__log_${key}_parameters`;
@@ -28,25 +28,25 @@ export function logMethod(target, key, descriptor) {
     const originalMethod = descriptor.value;
 
     //editing the descriptor/value parameter
-    descriptor.value = function(...args: any[]) {
+    descriptor.value = function(...arguments_: any[]) {
         const metadataKey = `__log_${key}_parameters`;
         const indices = target[metadataKey];
 
         if (Array.isArray(indices)) {
-            for (let i = 0; i < args.length; i++) {
-                if (indices.indexOf(i) !== -1) {
-                    const arg = args[i];
-                    const argStr = JSON.stringify(arg) || arg.toString();
-                    console.log(`%c ${key} arg[${i}]: ${argStr}`, `color: ${INFO_COLOR}`);
+            for (let i = 0; i < arguments_.length; i++) {
+                if (indices.includes(i)) {
+                    const argument = arguments_[i];
+                    const argumentString = JSON.stringify(argument) || argument.toString();
+                    console.log(`%c ${key} arg[${i}]: ${argumentString}`, `color: ${INFO_COLOR}`);
                 }
             }
-            const result = originalMethod.apply(this, args);
+            const result = originalMethod.apply(this, arguments_);
             const r = JSON.stringify(result);
             console.log(`%c Call result: ${key} => ${r}`, `color: ${INFO_COLOR}`);
             return result;
         } else {
-            const a = args.map(a => JSON.stringify(a) || a.toString()).join();
-            const result = originalMethod.apply(this, args);
+            const a = arguments_.map(a => JSON.stringify(a) || a.toString()).join();
+            const result = originalMethod.apply(this, arguments_);
             const r = JSON.stringify(result);
             console.log(`%c Call: ${key}(${a}) => ${r}`, `color: ${INFO_COLOR}`);
             return result;

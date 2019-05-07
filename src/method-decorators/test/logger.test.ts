@@ -1,4 +1,4 @@
-import {logMethod, logParameter} from "../logger";
+import {logMethod, logParameter} from '../logger';
 
 describe('logger decorators test', () => {
     test('Check full method logging', () => {
@@ -14,14 +14,14 @@ describe('logger decorators test', () => {
             public testMethod(
                 param1: string,
             ) {
-                console.log(`testMethod invoke with param ${param1}`);
+                console.log(`%c testMethod invoke with param ${param1}`);
             }
         }
 
         const testClass = new TestClass();
-        testClass.testMethod("not null string");
-        expect(console.log).toBeCalled();
-        expect(actualMessage).toEqual('Call: testMethod("not null string") => undefined');
+        testClass.testMethod('not null string');
+        expect(console.log).toHaveBeenCalled();
+        expect(actualMessage).toEqual('%c Call: testMethod("not null string") => undefined');
     });
 
     test('Check only one parameter logging', () => {
@@ -39,13 +39,13 @@ describe('logger decorators test', () => {
                 @logParameter
                 param2: string,
             ) {
-                console.log(`testMethod invoke with params ${param1}, ${param2}`);
+                console.log(`%c testMethod invoke with params ${param1}, ${param2}`);
             }
         }
 
         const testClass = new TestClass();
-        testClass.testMethod("not null string 1", "not null string 2");
-        expect(console.log).toBeCalled();
-        expect(actualMessage).toEqual('testMethod arg[1]: "not null string 2"');
+        testClass.testMethod('not null string 1', 'not null string 2');
+        expect(console.log).toHaveBeenCalled();
+        expect(actualMessage).toEqual('%c testMethod arg[1]: "not null string 2"');
     });
 });
