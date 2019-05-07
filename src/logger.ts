@@ -4,6 +4,8 @@
  * @param key
  * @param index
  */
+import {INFO_COLOR} from "./types";
+
 export function logParameter(target: any, key: string, index: number) {
     const metadataKey = `__log_${key}_parameters`;
     if (Array.isArray(target[metadataKey])) {
@@ -35,18 +37,18 @@ export function logMethod(target, key, descriptor) {
                 if (indices.indexOf(i) !== -1) {
                     const arg = args[i];
                     const argStr = JSON.stringify(arg) || arg.toString();
-                    console.log(`${key} arg[${i}]: ${argStr}`);
+                    console.log(`%c ${key} arg[${i}]: ${argStr}`, `color: ${INFO_COLOR}`);
                 }
             }
             const result = originalMethod.apply(this, args);
             const r = JSON.stringify(result);
-            console.log(`Call result: ${key} => ${r}`);
+            console.log(`%c Call result: ${key} => ${r}`, `color: ${INFO_COLOR}`);
             return result;
         } else {
             const a = args.map(a => JSON.stringify(a) || a.toString()).join();
             const result = originalMethod.apply(this, args);
             const r = JSON.stringify(result);
-            console.log(`Call: ${key}(${a}) => ${r}`);
+            console.log(`%c Call: ${key}(${a}) => ${r}`, `color: ${INFO_COLOR}`);
             return result;
         }
     };

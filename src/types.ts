@@ -40,3 +40,6 @@ export interface Lambda1<T> {
     (arg1: T): void;
     name?: string;
 }
+
+export const INFO_COLOR = '#208BDA';
+export const WARNING_COLOR = '#DA940B';
