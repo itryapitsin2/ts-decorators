@@ -9,7 +9,8 @@
         "lint:fix": "eslint --fix ./src --ext .jsx,.js,.ts,.tsx",
         "test": "jest",
         "test:watch": "npm test -- --watch",
-        "setup": "npm install"
+        "setup": "npm install",
+        "coveralls": "cat ./coverage/lcov/lcov.info | ./node_modules/.bin/coveralls"
     },
     "repository": {
         "type": "git",
