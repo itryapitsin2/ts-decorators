@@ -9,15 +9,32 @@
  */
 import {IsString} from '../types';
 
+export class MinValueError extends Error {
+    constructor(m?: string) {
+        super(m);
+        Object.setPrototypeOf(this, MinValueError.prototype);
+    }
+}
+
+export class MaxValueError extends Error {
+    constructor(m?: string) {
+        super(m);
+        Object.setPrototypeOf(this, MaxValueError.prototype);
+    }
+}
+
 export function minValue(minValue: number): PropertyDecorator {
     return function (target: Record<string, any>, propertyKey: string): void {
-
+        delete target[propertyKey];
         Reflect.defineProperty(target, propertyKey, {
+            get: (): any => {
+                return target["_" + propertyKey];
+            },
             set: (value: number): void => {
                 if (value < minValue) {
-                    throw new Error('minValue error');
+                    throw new MinValueError('minValue error');
                 }
-                target[propertyKey] = value;
+                target["_" + propertyKey] = value;
             }
         });
     };
@@ -34,13 +51,16 @@ export function minValue(minValue: number): PropertyDecorator {
  */
 export function maxValue(maxValue: number): PropertyDecorator {
     return function (target: Record<string, any>, propertyKey: string): void {
-
+        delete target[propertyKey];
         Reflect.defineProperty(target, propertyKey, {
+            get: (): any => {
+                return target["_" + propertyKey];
+            },
             set: (value: number): void => {
                 if (value > maxValue) {
-                    throw new Error('maxValue error');
+                    throw new MaxValueError('maxValue error');
                 }
-                target[propertyKey] = value;
+                target["_" + propertyKey] = value;
             }
         });
     };
@@ -78,7 +98,7 @@ export function notNull(target: Record<string, any>, propertyKey: string): void 
  * @param {string} min A minimum value
  */
 export function minLength(min: number): PropertyDecorator {
-    return function(target: Record<string, any>, propertyKey: string): void {
+    return function (target: Record<string, any>, propertyKey: string): void {
 
         Reflect.defineProperty(target, propertyKey, {
             set: (value: string): void => {
@@ -113,7 +133,7 @@ export function notEmptyString(): PropertyDecorator {
  * @param {string} max A maximum value
  */
 export function maxLength(max: number): PropertyDecorator {
-    return function(target: Record<string, any>, propertyKey: string): void {
+    return function (target: Record<string, any>, propertyKey: string): void {
 
         Reflect.defineProperty(target, propertyKey, {
             set: (value: string): void => {
@@ -134,7 +154,7 @@ export function regex(regex: RegExp | string): PropertyDecorator {
     // @ts-ignore
     const r: RegExp = IsString(regex) ? new RegExp(regex) : regex;
 
-    return function(target: Record<string, any>, propertyKey: string): void {
+    return function (target: Record<string, any>, propertyKey: string): void {
         Reflect.defineProperty(target, propertyKey, {
             set: (value: string): void => {
                 if (!r.test(value)) {
