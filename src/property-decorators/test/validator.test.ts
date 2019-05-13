@@ -1,4 +1,4 @@
-import {maxValue, MaxValueError, minValue, MinValueError} from '../validator';
+import {maxValue, MaxValueError, minValue, MinValueError, notNull, NullReferenceError} from '../validator';
 
 describe('@validator decorator test', () => {
     test('Check minValue decorator', () => {
@@ -28,6 +28,21 @@ describe('@validator decorator test', () => {
         );
 
         testClass.testField = 9;
+        expect(testClass.testField).toBeDefined();
+    });
+
+    test('Check notNull decorator', () => {
+        class TestClass {
+            @notNull
+            public testField: any;
+        }
+
+        const testClass = new TestClass();
+        expect(() => testClass.testField = null).toThrow(
+            NullReferenceError
+        );
+
+        testClass.testField = {};
         expect(testClass.testField).toBeDefined();
     });
 

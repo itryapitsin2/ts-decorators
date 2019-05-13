@@ -23,6 +23,13 @@ export class MaxValueError extends Error {
     }
 }
 
+export class NullReferenceError extends Error {
+    constructor(m?: string) {
+        super(m);
+        Object.setPrototypeOf(this, NullReferenceError.prototype);
+    }
+}
+
 export function minValue(minValue: number): PropertyDecorator {
     return function (target: Record<string, any>, propertyKey: string): void {
         delete target[propertyKey];
@@ -77,13 +84,16 @@ export function maxValue(maxValue: number): PropertyDecorator {
  * @param {string} propertyKey Property name
  */
 export function notNull(target: Record<string, any>, propertyKey: string): void {
-
+    delete target[propertyKey];
     Reflect.defineProperty(target, propertyKey, {
+        get: (): any => {
+            return target["_" + propertyKey];
+        },
         set: (value: any): void => {
             if (!value) {
-                throw new Error('null error');
+                throw new NullReferenceError('null error');
             }
-            target[propertyKey] = value;
+            target["_" + propertyKey] = value;
         }
     });
 }
