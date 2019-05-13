@@ -1,12 +1,16 @@
-import { WARNING_COLOR } from '../types';
+import { WARNING_COLOR, Lambda, IsBoolean, IsFunction } from '../types';
 
 /**
  * Write into console Deprecated warning for a property
  * @param enabled: set false in production mode
  */
-export function deprecated(enabled: boolean = true): PropertyDecorator {
+export function deprecated(enabled: Lambda<boolean> | boolean = (): boolean => { return true; }): PropertyDecorator {
     return function(target: Record<string, any>, propertyKey: string): void {
-        if (!enabled) {
+        if (IsBoolean(enabled) && !enabled) {
+            return;
+        }
+        // @ts-ignore
+        if (IsFunction(enabled) && !enabled()) {
             return;
         }
         let value = target[propertyKey];

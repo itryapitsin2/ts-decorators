@@ -11,20 +11,6 @@ describe('logger decorators test', () => {
             },
         );
 
-        class NullError extends Error {
-            constructor(m?: string) {
-                super(m);
-
-                // Set the prototype explicitly.
-                Object.setPrototypeOf(this, NullError.prototype);
-            }
-        }
-        try {
-            throw new NullError();
-        } catch (e) {
-            console.log(e instanceof NullError);
-        }
-
         class TestClass {
             @logMethod
             public testMethod(param1: string) {
@@ -63,5 +49,34 @@ describe('logger decorators test', () => {
         testClass.testMethod('not null string 1', 'not null string 2');
         expect(console.log).toHaveBeenCalled();
         expect(actualMessage).toEqual('%c testMethod arg[1]: "not null string 2"');
+    });
+
+    test('Check 2 parameters logging', () => {
+        const oldLog = console.log;
+        let actualMessage = '';
+        console.log = jest.fn(
+            (message?: any, ...optionalParams: any[]): void => {
+                actualMessage += message;
+                oldLog(message, optionalParams);
+            },
+        );
+
+        class TestClass {
+            @logMethod
+            public testMethod(
+                param1: string,
+                @logParameter
+                param2: string,
+                @logParameter
+                param3: number,
+            ) {
+            }
+        }
+
+        const testClass = new TestClass();
+        testClass.testMethod('not null string 1', 'not null string 2', 10);
+        expect(console.log).toHaveBeenCalled();
+        expect(actualMessage).toMatch('%c testMethod arg[1]: "not null string 2"');
+        expect(actualMessage).toMatch('%c testMethod arg[2]: 10');
     });
 });
