@@ -6,7 +6,7 @@ import {
     maxLength,
     notEmptyString,
     isEmail,
-} from '../validator';
+} from '../';
 import {
     MinLengthError,
     MaxValueError,

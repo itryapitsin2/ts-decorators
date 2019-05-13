@@ -1,4 +1,4 @@
-import { tryCatch, validate } from '../validator';
+import { tryCatch, validate } from '../';
 
 describe('@validator decorator test', () => {
     test('Check notNull decorator', () => {
