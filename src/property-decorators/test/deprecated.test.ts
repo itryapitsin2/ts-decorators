@@ -28,7 +28,7 @@ describe('deprecated property decorator tests', () => {
         expect(actualMessage).toEqual('%c "testField" field is marked as 💩 (deprecated)');
     });
 
-    test('test skip warning for prod mode', () => {
+    test('test skip warning by lambda for prod mode', () => {
         const oldLog = console.log;
         let actualMessage = '';
         console.log = jest.fn(
@@ -40,6 +40,27 @@ describe('deprecated property decorator tests', () => {
 
         class TestClass {
             @deprecated(() => { return false; })
+            public testField: string;
+        }
+
+        const actualString = 'Test string';
+        const testClass = new TestClass();
+        testClass.testField = actualString;
+        expect(console.log).not.toHaveBeenCalled();
+    });
+
+    test('test skip warning by boolean for prod mode', () => {
+        const oldLog = console.log;
+        let actualMessage = '';
+        console.log = jest.fn(
+            (message?: any, ...optionalParams: any[]): void => {
+                actualMessage = message;
+                oldLog(message, optionalParams);
+            },
+        );
+
+        class TestClass {
+            @deprecated(false)
             public testField: string;
         }
 
