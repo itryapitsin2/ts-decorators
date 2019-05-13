@@ -38,7 +38,11 @@ function notNull(target: any, propertyKey: string | symbol, parameterIndex: numb
  * @param min: minimum value of string length
  */
 function minLength(min: number): ParameterDecorator {
-    return (target: Record<string, any>, propertyKey: string | symbol, parameterIndex: number): void => {
+    return (
+        target: Record<string, any>,
+        propertyKey: string | symbol,
+        parameterIndex: number,
+    ): void => {
         let existingMinLengthParameters: StringLengthMetadataType[] =
             Reflect.getOwnMetadata(minLengthMetadataKey, target, propertyKey) || [];
         existingMinLengthParameters.push({ idx: parameterIndex, length: min });
@@ -63,7 +67,11 @@ const notEmptyString = () => {
  * @param max: maximum value of string length
  */
 function maxLength(max: number): ParameterDecorator {
-    return (target: Record<string, any>, propertyKey: string | symbol, parameterIndex: number): void => {
+    return (
+        target: Record<string, any>,
+        propertyKey: string | symbol,
+        parameterIndex: number,
+    ): void => {
         let existingMaxLengthParameters: StringLengthMetadataType[] =
             Reflect.getOwnMetadata(maxLengthMetadataKey, target, propertyKey) || [];
         existingMaxLengthParameters.push({ idx: parameterIndex, length: max });
@@ -84,7 +92,11 @@ function regex(regex: RegExp | string): ParameterDecorator {
     // @ts-ignore
     const r: RegExp = IsString(regex) ? new RegExp(regex) : regex;
 
-    return (target: Record<string, any>, propertyKey: string | symbol, parameterIndex: number): void => {
+    return (
+        target: Record<string, any>,
+        propertyKey: string | symbol,
+        parameterIndex: number,
+    ): void => {
         let existingRegexParameters: RegexMetadataType[] =
             Reflect.getOwnMetadata(regexMetadataKey, target, propertyKey) || [];
         existingRegexParameters.push({ idx: parameterIndex, regex: r });
@@ -101,7 +113,11 @@ function isEmail(): ParameterDecorator {
 
 function customValidator<T>(name: string, data?: T) {
     const nameMetadataKey = Symbol(name);
-    return (target: Record<string, any>, propertyKey: string | symbol, parameterIndex: number): void => {
+    return (
+        target: Record<string, any>,
+        propertyKey: string | symbol,
+        parameterIndex: number,
+    ): void => {
         let existingCustomParameters: T[] =
             Reflect.getOwnMetadata(nameMetadataKey, target, propertyKey) || [];
         existingCustomParameters.push({ ...data, idx: parameterIndex });

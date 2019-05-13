@@ -1,4 +1,3 @@
-
 // 6.1.1 The Undefined Type
 // https://tc39.github.io/ecma262/#sec-ecmascript-language-types-undefined-type
 export function IsUndefined(x: any): boolean {

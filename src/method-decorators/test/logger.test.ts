@@ -1,13 +1,15 @@
-import {logMethod, logParameter} from '../logger';
+import { logMethod, logParameter } from '../logger';
 
 describe('logger decorators test', () => {
     test('Check full method logging', () => {
         const oldLog = console.log;
         let actualMessage = '';
-        console.log = jest.fn((message?: any, ...optionalParams: any[]): void => {
-            actualMessage = message;
-            oldLog(message, optionalParams);
-        });
+        console.log = jest.fn(
+            (message?: any, ...optionalParams: any[]): void => {
+                actualMessage = message;
+                oldLog(message, optionalParams);
+            },
+        );
 
         class NullError extends Error {
             constructor(m?: string) {
@@ -23,13 +25,9 @@ describe('logger decorators test', () => {
             console.log(e instanceof NullError);
         }
 
-
-
         class TestClass {
             @logMethod
-            public testMethod(
-                param1: string,
-            ) {
+            public testMethod(param1: string) {
                 console.log(`%c testMethod invoke with param ${param1}`);
             }
         }
@@ -43,10 +41,12 @@ describe('logger decorators test', () => {
     test('Check only one parameter logging', () => {
         const oldLog = console.log;
         let actualMessage = '';
-        console.log = jest.fn((message?: any, ...optionalParams: any[]): void => {
-            actualMessage = !actualMessage ? message : actualMessage;
-            oldLog(message, optionalParams);
-        });
+        console.log = jest.fn(
+            (message?: any, ...optionalParams: any[]): void => {
+                actualMessage = !actualMessage ? message : actualMessage;
+                oldLog(message, optionalParams);
+            },
+        );
 
         class TestClass {
             @logMethod

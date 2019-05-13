@@ -6,7 +6,7 @@ describe('@validator decorator test', () => {
             @validate
             public testMethod(
                 @validate.notNull
-                    param1: string,
+                param1: string,
             ) {
                 console.log('testMethod invoke');
             }
@@ -25,7 +25,7 @@ describe('@validator decorator test', () => {
             @validate
             public testMethod(
                 @validate.maxLength(10)
-                    param1: string,
+                param1: string,
             ) {
                 console.log('testMethod invoke');
             }
@@ -43,7 +43,7 @@ describe('@validator decorator test', () => {
             @validate
             public testMethod(
                 @validate.minLength(10)
-                    param1: string,
+                param1: string,
             ) {
                 console.log('testMethod invoke');
             }
@@ -51,9 +51,7 @@ describe('@validator decorator test', () => {
 
         const testClass = new TestClass();
         testClass.testMethod('12345678901234567890');
-        expect(() => testClass.testMethod('1234567')).toThrow(
-            'String is short',
-        );
+        expect(() => testClass.testMethod('1234567')).toThrow('String is short');
     });
 
     test('Check notEmptyString decorator', () => {
@@ -61,7 +59,7 @@ describe('@validator decorator test', () => {
             @validate
             public testMethod(
                 @validate.notEmptyString()
-                    param1: string,
+                param1: string,
             ) {
                 console.log('testMethod invoke');
             }
@@ -69,9 +67,7 @@ describe('@validator decorator test', () => {
 
         const testClass = new TestClass();
         testClass.testMethod('12345678901234567890');
-        expect(() => testClass.testMethod('')).toThrow(
-            'String is short',
-        );
+        expect(() => testClass.testMethod('')).toThrow('String is short');
     });
 
     test('Check tryCatch decorator', () => {
@@ -80,7 +76,6 @@ describe('@validator decorator test', () => {
         });
 
         class TestClass {
-
             @tryCatch(logger)
             public throwError() {
                 throw new Error('Test error');
@@ -97,7 +92,7 @@ describe('@validator decorator test', () => {
             @validate
             public testMethod(
                 @validate.isEmail()
-                    param1: string,
+                param1: string,
             ) {
                 console.log('testMethod invoke');
             }
@@ -105,9 +100,7 @@ describe('@validator decorator test', () => {
 
         const testClass = new TestClass();
         testClass.testMethod('user@example.com');
-        expect(() => testClass.testMethod('www.google.com')).toThrow(
-            'Failed regex at argument',
-        );
+        expect(() => testClass.testMethod('www.google.com')).toThrow('Failed regex at argument');
     });
 
     test('Check max & minLength together decorator', () => {
@@ -116,7 +109,7 @@ describe('@validator decorator test', () => {
             public testMethod(
                 @validate.minLength(5)
                 @validate.maxLength(10)
-                    param1: string,
+                param1: string,
             ) {
                 console.log('testMethod invoke');
             }
@@ -124,12 +117,8 @@ describe('@validator decorator test', () => {
 
         const testClass = new TestClass();
         testClass.testMethod('123456');
-        expect(() => testClass.testMethod('123')).toThrow(
-            'String is short',
-        );
+        expect(() => testClass.testMethod('123')).toThrow('String is short');
 
-        expect(() => testClass.testMethod('1234567890123')).toThrow(
-            'Incorrect string length',
-        );
+        expect(() => testClass.testMethod('1234567890123')).toThrow('Incorrect string length');
     });
 });

@@ -1,4 +1,20 @@
-import {maxValue, MaxValueError, minValue, MinValueError, notNull, NullReferenceError} from '../validator';
+import {
+    maxValue,
+    minValue,
+    notNull,
+    minLength,
+    maxLength,
+    notEmptyString,
+    isEmail,
+} from '../validator';
+import {
+    MinLengthError,
+    MaxValueError,
+    MinValueError,
+    NullReferenceError,
+    MaxLengthError,
+    RegExError,
+} from '../../errors';
 
 describe('@validator decorator test', () => {
     test('Check minValue decorator', () => {
@@ -8,9 +24,7 @@ describe('@validator decorator test', () => {
         }
 
         const testClass = new TestClass();
-        expect(() => testClass.testField = 9).toThrow(
-            MinValueError
-        );
+        expect(() => (testClass.testField = 9)).toThrow(MinValueError);
 
         testClass.testField = 11;
         expect(testClass.testField).toBeDefined();
@@ -23,9 +37,7 @@ describe('@validator decorator test', () => {
         }
 
         const testClass = new TestClass();
-        expect(() => testClass.testField = 11).toThrow(
-            MaxValueError
-        );
+        expect(() => (testClass.testField = 11)).toThrow(MaxValueError);
 
         testClass.testField = 9;
         expect(testClass.testField).toBeDefined();
@@ -38,125 +50,61 @@ describe('@validator decorator test', () => {
         }
 
         const testClass = new TestClass();
-        expect(() => testClass.testField = null).toThrow(
-            NullReferenceError
-        );
+        expect(() => (testClass.testField = null)).toThrow(NullReferenceError);
 
         testClass.testField = {};
         expect(testClass.testField).toBeDefined();
     });
 
-    //
-    // test('Check maxLength decorator', () => {
-    //     class TestClass {
-    //         @validate
-    //         public testMethod(
-    //             @validate.maxLength(10)
-    //                 param1: string,
-    //         ) {
-    //             console.log('testMethod invoke');
-    //         }
-    //     }
-    //
-    //     const testClass = new TestClass();
-    //     testClass.testMethod('1234567');
-    //     expect(() => testClass.testMethod('12345678901234567890')).toThrow(
-    //         'Incorrect string length',
-    //     );
-    // });
-    //
-    // test('Check minLength decorator', () => {
-    //     class TestClass {
-    //         @validate
-    //         public testMethod(
-    //             @validate.minLength(10)
-    //                 param1: string,
-    //         ) {
-    //             console.log('testMethod invoke');
-    //         }
-    //     }
-    //
-    //     const testClass = new TestClass();
-    //     testClass.testMethod('12345678901234567890');
-    //     expect(() => testClass.testMethod('1234567')).toThrow(
-    //         'String is short',
-    //     );
-    // });
-    //
-    // test('Check notEmptyString decorator', () => {
-    //     class TestClass {
-    //         @validate
-    //         public testMethod(
-    //             @validate.notEmptyString()
-    //                 param1: string,
-    //         ) {
-    //             console.log('testMethod invoke');
-    //         }
-    //     }
-    //
-    //     const testClass = new TestClass();
-    //     testClass.testMethod('12345678901234567890');
-    //     expect(() => testClass.testMethod('')).toThrow(
-    //         'String is short',
-    //     );
-    // });
-    //
-    // test('Check tryCatch decorator', () => {
-    //     const logger = jest.fn((e: Error) => {
-    //         console.log(e.message);
-    //     });
-    //
-    //     class TestClass {
-    //
-    //         @tryCatch(logger)
-    //         public throwError() {
-    //             throw new Error('Test error');
-    //         }
-    //     }
-    //
-    //     const testClass = new TestClass();
-    //     testClass.throwError();
-    //     expect(logger).toHaveBeenCalled();
-    // });
-    //
-    // test('Check isEmail decorator', () => {
-    //     class TestClass {
-    //         @validate
-    //         public testMethod(
-    //             @validate.isEmail()
-    //                 param1: string,
-    //         ) {
-    //             console.log('testMethod invoke');
-    //         }
-    //     }
-    //
-    //     const testClass = new TestClass();
-    //     testClass.testMethod('user@example.com');
-    //     expect(() => testClass.testMethod('www.google.com')).toThrow(
-    //         'Failed regex at argument',
-    //     );
-    // });
-    //
-    // test('Check max & minLength together decorator', () => {
-    //     class TestClass {
-    //         @validate
-    //         public testMethod(
-    //             @validate.minLength(5)
-    //             @validate.maxLength(10)
-    //                 param1: string,
-    //         ) {
-    //             console.log('testMethod invoke');
-    //         }
-    //     }
-    //
-    //     const testClass = new TestClass();
-    //     testClass.testMethod('123456');
-    //     expect(() => testClass.testMethod('123')).toThrow(
-    //         'String is short',
-    //     );
-    //
-    //     expect(() => testClass.testMethod('1234567890123')).toThrow(
-    //         'Incorrect string length',
-    //     );
-    // });
+    test('Check minLength decorator', () => {
+        class TestClass {
+            @minLength(10)
+            public testField: string;
+        }
+
+        const testClass = new TestClass();
+        expect(() => (testClass.testField = '123')).toThrow(MinLengthError);
+
+        testClass.testField = '1234567890123';
+        expect(testClass.testField).toBeDefined();
+    });
+
+    test('Check maxLength decorator', () => {
+        class TestClass {
+            @maxLength(5)
+            public testField: string;
+        }
+
+        const testClass = new TestClass();
+        expect(() => (testClass.testField = '1234567890123')).toThrow(MaxLengthError);
+
+        testClass.testField = '123';
+        expect(testClass.testField).toBeDefined();
+    });
+
+    test('Check notEmptyString decorator', () => {
+        class TestClass {
+            @notEmptyString()
+            public testField: string;
+        }
+
+        const testClass = new TestClass();
+        expect(() => (testClass.testField = '')).toThrow(MinLengthError);
+
+        testClass.testField = '123';
+        expect(testClass.testField).toBeDefined();
+    });
+
+    test('Check isEmail decorator', () => {
+        class TestClass {
+            @isEmail()
+            public testField: string;
+        }
+
+        const testClass = new TestClass();
+        expect(() => (testClass.testField = 'test.com')).toThrow(RegExError);
+
+        testClass.testField = 'test@example.com';
+        expect(testClass.testField).toBeDefined();
+    });
 });

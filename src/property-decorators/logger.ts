@@ -1,4 +1,4 @@
-import {INFO_COLOR} from '../types';
+import { INFO_COLOR } from '../types';
 
 /**
  * Write into console changes in property
@@ -11,18 +11,20 @@ export function logger(enabled: boolean = true): PropertyDecorator {
         }
         let value = target[propertyKey];
         Reflect.defineProperty(target, propertyKey, {
-            get: () =>  {
+            get: () => {
                 console.log(
                     `%c ℹ️ Getting value for field "${propertyKey}": ${value}`,
-                    `color: ${INFO_COLOR}`);
+                    `color: ${INFO_COLOR}`,
+                );
                 return value;
             },
-            set: (value_) => {
+            set: value_ => {
                 console.log(
                     `%c ℹ️ Setting value for field "${propertyKey}": ${value_}`,
-                    `color: ${INFO_COLOR}`);
+                    `color: ${INFO_COLOR}`,
+                );
                 value = value_;
-            }
+            },
         });
     };
 }

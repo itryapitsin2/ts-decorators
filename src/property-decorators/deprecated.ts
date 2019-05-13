@@ -1,4 +1,4 @@
-import {WARNING_COLOR} from '../types';
+import { WARNING_COLOR } from '../types';
 
 /**
  * Write into console Deprecated warning for a property
@@ -11,18 +11,20 @@ export function deprecated(enabled: boolean = true): PropertyDecorator {
         }
         let value = target[propertyKey];
         Reflect.defineProperty(target, propertyKey, {
-            get: () =>  {
+            get: () => {
                 console.log(
                     `%c "${propertyKey}" field is marked as 💩 (deprecated)`,
-                    `color: ${WARNING_COLOR}`);
+                    `color: ${WARNING_COLOR}`,
+                );
                 return value;
             },
-            set: (value_) => {
+            set: value_ => {
                 console.log(
                     `%c "${propertyKey}" field is marked as 💩 (deprecated)`,
-                    `color: ${WARNING_COLOR}`);
+                    `color: ${WARNING_COLOR}`,
+                );
                 value = value_;
-            }
+            },
         });
     };
 }

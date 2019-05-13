@@ -4,7 +4,7 @@
  * @param key
  * @param index
  */
-import {INFO_COLOR} from '../types';
+import { INFO_COLOR } from '../types';
 
 export function logParameter(target: any, key: string, index: number) {
     const metadataKey = `__log_${key}_parameters`;

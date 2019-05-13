@@ -1,13 +1,15 @@
-import {deprecated} from '../deprecated';
+import { deprecated } from '../deprecated';
 
 describe('deprecated property decorator tests', () => {
     test('test warning in console on getting and setting ', () => {
         const oldLog = console.log;
         let actualMessage = '';
-        console.log = jest.fn((message?: any, ...optionalParams: any[]): void => {
-            actualMessage = message;
-            oldLog(message, optionalParams);
-        });
+        console.log = jest.fn(
+            (message?: any, ...optionalParams: any[]): void => {
+                actualMessage = message;
+                oldLog(message, optionalParams);
+            },
+        );
 
         class TestClass {
             @deprecated()
@@ -15,7 +17,7 @@ describe('deprecated property decorator tests', () => {
         }
 
         const actualString = 'Test string';
-        const testClass =  new TestClass();
+        const testClass = new TestClass();
         testClass.testField = actualString;
         expect(console.log).toHaveBeenCalled();
         expect(actualMessage).toEqual('%c "testField" field is marked as 💩 (deprecated)');
