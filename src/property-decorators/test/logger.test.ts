@@ -1,4 +1,4 @@
-import { logger } from '../logger';
+import { logger } from '../';
 
 describe('logger property decorator tests', () => {
     test('test warning in console on getting and setting ', () => {
