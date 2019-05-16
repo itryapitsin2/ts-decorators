@@ -11,20 +11,6 @@ describe('logger decorators test', () => {
             },
         );
 
-        class NullError extends Error {
-            constructor(m?: string) {
-                super(m);
-
-                // Set the prototype explicitly.
-                Object.setPrototypeOf(this, NullError.prototype);
-            }
-        }
-        try {
-            throw new NullError();
-        } catch (e) {
-            console.log(e instanceof NullError);
-        }
-
         class TestClass {
             @logMethod
             public testMethod(param1: string) {
