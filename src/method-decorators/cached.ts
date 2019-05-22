@@ -4,10 +4,9 @@ interface CacheItem {
 }
 
 /**
- *
- * @param {number} timeout Expired timeout in seconds
+ * Cache method call by params
  */
-export function cached(timeout: number = Infinity) {
+export function cached() {
     return function(target: any, _methodName: string, descriptor: PropertyDescriptor) {
         let method = descriptor.value;
         const cache: Map<string, CacheItem> = new Map<string, CacheItem>();

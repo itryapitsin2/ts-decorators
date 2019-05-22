@@ -1,6 +1,6 @@
 {
-    "name": "ts-decorators",
-    "version": "1.0.0-SNAPSHOT",
+    "name": "@itryapitsin/ts-decorators",
+    "version": "1.0.0-RC1",
     "description": "No description",
     "scripts": {
         "format": "prettier --write './src/**/*.{css,gql,graphql,html,js,jsx,json,less,md,mdx,scss,ts,tsx,vue,yaml,yml}' '.editorconfig' 'LICENSE'",
