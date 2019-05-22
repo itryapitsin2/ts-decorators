@@ -1,4 +1,4 @@
-import { cached } from '../cached';
+import { cached } from '../';
 
 describe('cached decorators test', () => {
     test('Check cached/uncached case', () => {
