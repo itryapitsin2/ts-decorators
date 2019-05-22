@@ -1,4 +1,4 @@
-import { deprecated } from '../deprecated';
+import { deprecated } from '../../';
 
 describe('deprecated property decorator tests', () => {
     test('test warning in console on getting and setting ', () => {

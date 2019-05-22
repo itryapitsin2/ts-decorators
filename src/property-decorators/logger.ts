@@ -1,4 +1,4 @@
-import { INFO_COLOR } from '../types';
+import { INFO_COLOR } from '../';
 
 /**
  * Write into console changes in property

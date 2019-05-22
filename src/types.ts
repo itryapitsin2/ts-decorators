@@ -31,13 +31,13 @@ export function IsNumber(x: any): boolean {
     return typeof x === 'number';
 }
 
-export interface Lambda {
-    (): void;
+export interface Lambda<R = void> {
+    (): R;
     name?: string;
 }
 
-export interface Lambda1<T> {
-    (arg1: T): void;
+export interface Lambda1<T, R = void> {
+    (arg1: T): R;
     name?: string;
 }
 

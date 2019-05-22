@@ -1,4 +1,4 @@
-import { logMethod, logParameter } from '../';
+import { logMethod, logParameter } from '../../';
 
 describe('logger decorators test', () => {
     test('Check full method logging', () => {

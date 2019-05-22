@@ -6,15 +6,13 @@ import {
     maxLength,
     notEmptyString,
     isEmail,
-} from '../validator';
-import {
     MinLengthError,
     MaxValueError,
     MinValueError,
     NullReferenceError,
     MaxLengthError,
     RegExError,
-} from '../../errors';
+} from '../../';
 
 describe('@validator decorator test', () => {
     test('Check minValue decorator', () => {

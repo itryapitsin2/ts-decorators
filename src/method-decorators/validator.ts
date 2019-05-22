@@ -1,5 +1,5 @@
 import 'reflect-metadata';
-import { IsString, Lambda1 } from '../types';
+import { IsString, Lambda1 } from '../';
 
 interface StringLengthMetadataType {
     idx: number;

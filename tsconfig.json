@@ -14,6 +14,7 @@
         "resolveJsonModule": true,
         "esModuleInterop": true,
         "downlevelIteration": true,
+        "declaration": true,
         "outDir": "build",
         "lib": [
             "es6",
@@ -27,6 +28,6 @@
         "node_modules"
     ],
     "files": [
-        "src/method-decorators/index.ts"
+        "src/index.ts"
     ]
 }
