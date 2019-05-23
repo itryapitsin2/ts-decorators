@@ -17,3 +17,13 @@ after_script:
     - npm run format
     - npm pack
     - npm run coveralls
+
+deploy:
+    provider: npm
+    user: "$USER_NAME"
+    password: "$USER_PASSWORD"
+    email: "$EMAIL_USER_NAME"
+    api_key: "$NPM_API_TOKEN"
+    skip_cleanup: true
+    on:
+        tags: true
