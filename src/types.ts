@@ -31,6 +31,14 @@ export function IsNumber(x: any): boolean {
     return typeof x === 'number';
 }
 
+export function IsNotNullAndUndefined(x: any): boolean {
+    return !IsUndefined(x) && !IsNull(x);
+}
+
+export function IsNullOrUndefined(x: any): boolean {
+    return IsUndefined(x) || IsNull(x);
+}
+
 export interface Lambda<R = void> {
     (): R;
     name?: string;

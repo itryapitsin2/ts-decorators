@@ -1,10 +1,10 @@
-import { INFO_COLOR } from '../';
+import { INFO_COLOR } from '../types';
 
 /**
  * Write into console changes in property
  * @param enabled: set false in production mode
  */
-export function logger(enabled: boolean = true): PropertyDecorator {
+export function logProperty(enabled: boolean = true): PropertyDecorator {
     return function(target: Record<string, any>, propertyKey: string) {
         if (!enabled) {
             return;

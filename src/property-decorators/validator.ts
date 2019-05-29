@@ -7,15 +7,15 @@
  * }
  * @param {number} minValue A minimum value for validation
  */
+import { IsString } from '../types';
 import {
-    IsString,
     MinValueError,
     MaxValueError,
     NullReferenceError,
     MinLengthError,
     MaxLengthError,
     RegExError,
-} from '../';
+} from '../errors';
 
 export function minValue(minValue: number): PropertyDecorator {
     return function(target: Record<string, any>, propertyKey: string): void {

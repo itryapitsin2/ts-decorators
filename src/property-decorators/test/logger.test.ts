@@ -1,6 +1,6 @@
-import { logger } from '../../';
+import { logProperty } from '../';
 
-describe('logger property decorator tests', () => {
+describe('logProperty property decorator tests', () => {
     test('test warning in console on getting and setting ', () => {
         const oldLog = console.log;
         let actualMessage = '';
@@ -12,7 +12,7 @@ describe('logger property decorator tests', () => {
         );
 
         class TestClass {
-            @logger()
+            @logProperty()
             public testField: string;
         }
 
@@ -39,7 +39,7 @@ describe('logger property decorator tests', () => {
         );
 
         class TestClass {
-            @logger(false)
+            @logProperty(false)
             public testField: string;
         }
 

@@ -1,6 +1,6 @@
 import { logMethod, logParameter } from '../../';
 
-describe('logger decorators test', () => {
+describe('logProperty decorators test', () => {
     test('Check full method logging', () => {
         const oldLog = console.log;
         let actualMessage = '';
@@ -12,7 +12,7 @@ describe('logger decorators test', () => {
         );
 
         class TestClass {
-            @logMethod
+            @logMethod()
             public testMethod(param1: string) {
                 console.log(`%c testMethod invoke with param ${param1}`);
             }
@@ -21,7 +21,7 @@ describe('logger decorators test', () => {
         const testClass = new TestClass();
         testClass.testMethod('not null string');
         expect(console.log).toHaveBeenCalled();
-        expect(actualMessage).toEqual('%c Call: testMethod("not null string") => undefined');
+        expect(actualMessage).toEqual('%c ℹ️ Call: testMethod("not null string") => undefined');
     });
 
     test('Check only one parameter logging', () => {
@@ -35,7 +35,7 @@ describe('logger decorators test', () => {
         );
 
         class TestClass {
-            @logMethod
+            @logMethod()
             public testMethod(
                 param1: string,
                 @logParameter
@@ -48,6 +48,6 @@ describe('logger decorators test', () => {
         const testClass = new TestClass();
         testClass.testMethod('not null string 1', 'not null string 2');
         expect(console.log).toHaveBeenCalled();
-        expect(actualMessage).toEqual('%c testMethod arg[1]: "not null string 2"');
+        expect(actualMessage).toEqual('%c ℹ️ testMethod arg[1]: "not null string 2"');
     });
 });
