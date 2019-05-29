@@ -53,5 +53,8 @@ export interface Lambda1<T, R = void> {
     name?: string;
 }
 
+export type Constructor<T> = new (...args: any[]) => T;
+export type Mixin<T> = Constructor<T> | object;
+
 export const INFO_COLOR = '#208BDA';
 export const WARNING_COLOR = '#DA940B';
