@@ -24,6 +24,48 @@ describe('logProperty decorators test', () => {
         expect(actualMessage).toEqual('%c ℹ️ Call: testMethod("not null string") => undefined');
     });
 
+    test('Skip method logging when disabled by lambda', () => {
+        const oldLog = console.log;
+        let actualMessage = '';
+        console.log = jest.fn(
+            (message?: any, ...optionalParams: any[]): void => {
+                actualMessage = message;
+                oldLog(message, optionalParams);
+            },
+        );
+
+        class TestClass {
+            @logMethod(() => false)
+            public testMethod(param1: string) {
+            }
+        }
+
+        const testClass = new TestClass();
+        testClass.testMethod('not null string');
+        expect(console.log).not.toHaveBeenCalled();
+    });
+
+    test('Skip method logging when disabled by boolean', () => {
+        const oldLog = console.log;
+        let actualMessage = '';
+        console.log = jest.fn(
+            (message?: any, ...optionalParams: any[]): void => {
+                actualMessage = message;
+                oldLog(message, optionalParams);
+            },
+        );
+
+        class TestClass {
+            @logMethod(false)
+            public testMethod(param1: string) {
+            }
+        }
+
+        const testClass = new TestClass();
+        testClass.testMethod('not null string');
+        expect(console.log).not.toHaveBeenCalled();
+    });
+
     test('Check only one parameter logging', () => {
         const oldLog = console.log;
         let actualMessage = '';

@@ -27,6 +27,10 @@ export function IsString(x: any): boolean {
     return typeof x === 'string';
 }
 
+export function IsBoolean(x: any) {
+    return typeof x === 'boolean';
+}
+
 export function IsNumber(x: any): boolean {
     return typeof x === 'number';
 }

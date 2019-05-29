@@ -1,14 +1,20 @@
-import { INFO_COLOR } from '../types';
+import {INFO_COLOR, IsBoolean, IsFunction, Lambda} from '../types';
 
 /**
  * Write into console changes in property
  * @param enabled: set false in production mode
  */
-export function logProperty(enabled: boolean = true): PropertyDecorator {
+export function logProperty(enabled: boolean | Lambda = true): PropertyDecorator {
     return function(target: Record<string, any>, propertyKey: string) {
-        if (!enabled) {
+        if (IsBoolean(enabled) && !enabled) {
             return;
         }
+
+        // @ts-ignore
+        if (IsFunction(enabled) && !enabled()) {
+            return;
+        }
+
         let value = target[propertyKey];
         Reflect.defineProperty(target, propertyKey, {
             get: () => {

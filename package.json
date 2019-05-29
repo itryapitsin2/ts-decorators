@@ -1,6 +1,6 @@
 {
     "name": "@itryapitsin/ts-decorators",
-    "version": "1.0.0-RC4",
+    "version": "1.0.0-RC6",
     "description": "No description",
     "scripts": {
         "format": "prettier --write './src/**/*.{css,gql,graphql,html,js,jsx,json,less,md,mdx,scss,ts,tsx,vue,yaml,yml}' '.editorconfig' 'LICENSE'",
@@ -10,7 +10,8 @@
         "test": "jest",
         "test:watch": "npm test -- --watch",
         "setup": "npm install",
-        "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls"
+        "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls",
+        "publish": "npm run build && npm publish"
     },
     "main": "buid/index.js",
     "types": "build/index.d.ts",
