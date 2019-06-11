@@ -8,6 +8,7 @@ addons:
 before_script:
     - npm run setup
     - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
+    - npm run doc
     - npm run build
 
 script:
@@ -19,11 +20,9 @@ after_script:
     - npm run coveralls
 
 deploy:
-    provider: npm
-    user: "$USER_NAME"
-    password: "$USER_PASSWORD"
-    email: "$EMAIL_USER_NAME"
-    api_key: "$NPM_API_TOKEN"
+    provider: pages
     skip_cleanup: true
+    github_token: $GITHUB_TOKEN
+    keep_history: true
     on:
-        tags: true
+        branch: master

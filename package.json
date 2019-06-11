@@ -1,6 +1,6 @@
 {
     "name": "@itryapitsin/ts-decorators",
-    "version": "1.0.0-RC6",
+    "version": "1.0.0",
     "description": "No description",
     "scripts": {
         "format": "prettier --write './src/**/*.{css,gql,graphql,html,js,jsx,json,less,md,mdx,scss,ts,tsx,vue,yaml,yml}' '.editorconfig' 'LICENSE'",
@@ -11,7 +11,8 @@
         "test:watch": "npm test -- --watch",
         "setup": "npm install",
         "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls",
-        "publish": "npm run build && npm publish"
+        "publish": "npm run build && npm publish",
+        "doc": "typedoc --out docs/ src/ --readme README.md --exclude \"**/*+(index|.spec|.e2e).ts\""
     },
     "main": "buid/index.js",
     "types": "build/index.d.ts",
@@ -33,6 +34,7 @@
         "@typescript-eslint/eslint-plugin": "^1.7.0",
         "@typescript-eslint/parser": "^1.7.0",
         "babel-loader": "^8.0.5",
+        "coveralls": "^3.0.1",
         "eslint": "^5.16.0",
         "eslint-config-airbnb-typescript": "^1.1.0",
         "eslint-config-prettier": "^4.2.0",
@@ -46,8 +48,8 @@
         "jest": "^24.1.0",
         "prettier": "^1.17.0",
         "ts-jest": "^24.0.2",
-        "typescript": "^3.4.5",
-        "coveralls": "^3.0.1"
+        "typedoc": "^0.14.2",
+        "typescript": "^3.4.5"
     },
     "dependencies": {
         "reflect-metadata": "^0.1.13"
