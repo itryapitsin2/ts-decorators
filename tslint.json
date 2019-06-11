@@ -1,8 +1,0 @@
-{
-//  "extends": "tslint-config-airbnb",
-  "compilerOptions": {
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
-    "allowJs": true
-  }
-}
