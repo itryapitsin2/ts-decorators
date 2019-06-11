@@ -1,0 +1,75 @@
+{
+    "plugins": [
+        "jest",
+        "@typescript-eslint",
+        "eslint-comments",
+        "promise",
+        "unicorn"
+    ],
+    "extends": [
+        "eslint:recommended",
+        "plugin:eslint-comments/recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:jest/recommended",
+        "plugin:promise/recommended",
+        "plugin:unicorn/recommended",
+        "prettier",
+        "prettier/@typescript-eslint"
+    ],
+    "env": {
+        "browser": true,
+        "node": true,
+        "jest": true
+    },
+    "globals": {
+        "require": true
+    },
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module"
+    },
+    "rules": {
+        "object-curly-newline": "off",
+        "no-underscore-dangle": [
+            "warn",
+            {
+                "allowAfterThis": true
+            }
+        ],
+        "no-console": "off",
+        "indent": [
+            "warn",
+            4,
+            {
+                "SwitchCase": 1
+            }
+        ],
+        "class-methods-use-this": [ 1,
+            {
+                "exceptMethods": [
+                    "onAdd",
+                    "createLeafletElement",
+                    "render"
+                ]
+            }
+        ],
+        "import/order": "warn",
+        "import/prefer-default-export": "off",
+        "import/no-named-as-default": "warn",
+        "quotes": [
+            "warn",
+            "single"
+        ],
+        "semi": [
+            "warn",
+            "always"
+        ],
+        "unicorn/prevent-abbreviations": "warn",
+        "jest/no-disabled-tests": "warn",
+        "jest/no-focused-tests": "error",
+        "jest/no-identical-title": "error",
+        "jest/prefer-to-have-length": "warn",
+        "jest/valid-expect": "error"
+    }
+}
