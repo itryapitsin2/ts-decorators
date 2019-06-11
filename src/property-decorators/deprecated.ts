@@ -1,4 +1,4 @@
-import { WARNING_COLOR } from '../';
+import { WARNING_COLOR } from '..';
 
 /**
  * Write into console Deprecated warning for a property

@@ -1,4 +1,4 @@
-import { logProperty } from '../';
+import { logProperty } from '..';
 
 describe('logProperty property decorator tests', () => {
     test('test warning in console on getting and setting ', () => {

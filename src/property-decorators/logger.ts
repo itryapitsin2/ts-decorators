@@ -1,4 +1,4 @@
-import {INFO_COLOR, IsBoolean, IsFunction, Lambda} from '../types';
+import { INFO_COLOR, IsBoolean, IsFunction, Lambda } from '../types';
 
 /**
  * Write into console changes in property

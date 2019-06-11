@@ -16,7 +16,6 @@ describe('mixin decorator tests', () => {
             public methodB(): void {
                 caller('Called B.methodB');
             }
-            public fieldB: boolean = true;
         }
 
         interface C extends A, B {}
@@ -29,12 +28,10 @@ describe('mixin decorator tests', () => {
 
         expect(c.methodA).toBeDefined();
         expect(c.methodB).toBeDefined();
-        expect(c.fieldB).toBeDefined();
 
         c.methodA();
         c.methodB();
 
         expect(caller).toHaveBeenCalledTimes(2);
-        expect(c.fieldB).toEqual(true);
     });
 });

@@ -1,4 +1,4 @@
-import { tryCatch, validate } from '../';
+import { tryCatch, validate } from '..';
 
 describe('@validator decorator test', () => {
     test('Check notNull decorator', () => {
@@ -6,7 +6,7 @@ describe('@validator decorator test', () => {
             @validate
             public testMethod(
                 @validate.notNull
-                param1: string,
+                    param1: string,
             ) {
                 console.log('testMethod invoke');
             }
@@ -25,7 +25,7 @@ describe('@validator decorator test', () => {
             @validate
             public testMethod(
                 @validate.maxLength(10)
-                param1: string,
+                    param1: string,
             ) {
                 console.log('testMethod invoke');
             }
@@ -43,7 +43,7 @@ describe('@validator decorator test', () => {
             @validate
             public testMethod(
                 @validate.minLength(10)
-                param1: string,
+                    param1: string,
             ) {
                 console.log('testMethod invoke');
             }
@@ -59,7 +59,7 @@ describe('@validator decorator test', () => {
             @validate
             public testMethod(
                 @validate.notEmptyString()
-                param1: string,
+                    param1: string,
             ) {
                 console.log('testMethod invoke');
             }
@@ -92,7 +92,7 @@ describe('@validator decorator test', () => {
             @validate
             public testMethod(
                 @validate.isEmail()
-                param1: string,
+                    param1: string,
             ) {
                 console.log('testMethod invoke');
             }
@@ -109,7 +109,7 @@ describe('@validator decorator test', () => {
             public testMethod(
                 @validate.minLength(5)
                 @validate.maxLength(10)
-                param1: string,
+                    param1: string,
             ) {
                 console.log('testMethod invoke');
             }

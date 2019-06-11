@@ -1,5 +1,5 @@
 import 'reflect-metadata';
-import { IsNullOrUndefined, IsString, Lambda1 } from '../';
+import { IsNullOrUndefined, IsString, Lambda1 } from '..';
 
 interface StringLengthMetadataType {
     idx: number;
@@ -131,7 +131,7 @@ function customValidator<T>(name: string, data?: T): ParameterDecorator {
  * @param propertyName A method name
  * @param args: A list of parameters in method
  */
-function validateNulls(target: any, propertyName: string | symbol, args: IArguments) {
+function validateNulls(target: any, propertyName: string | symbol, arguments_) {
     let requiredParameters: number[] = Reflect.getOwnMetadata(
         requiredMetadataKey,
         target,
@@ -139,7 +139,7 @@ function validateNulls(target: any, propertyName: string | symbol, args: IArgume
     );
     if (requiredParameters) {
         for (let parameterIndex of requiredParameters) {
-            if (parameterIndex >= args.length || IsNullOrUndefined(args[parameterIndex])) {
+            if (parameterIndex >= arguments_.length || IsNullOrUndefined(arguments_[parameterIndex])) {
                 throw new Error(
                     `Missing required argument at ${propertyName.toString()} ${parameterIndex}`,
                 );
@@ -154,7 +154,7 @@ function validateNulls(target: any, propertyName: string | symbol, args: IArgume
  * @param propertyName A method name
  * @param args A list of parameters in method
  */
-function validateMaxLength(target: any, propertyName: string | symbol, args: IArguments) {
+function validateMaxLength(target: any, propertyName: string | symbol, arguments_) {
     let maxLengthParameters: StringLengthMetadataType[] = Reflect.getOwnMetadata(
         maxLengthMetadataKey,
         target,
@@ -163,9 +163,9 @@ function validateMaxLength(target: any, propertyName: string | symbol, args: IAr
     if (maxLengthParameters) {
         for (let tpe of maxLengthParameters) {
             if (
-                tpe.idx >= args.length ||
-                !IsString(args[tpe.idx]) ||
-                args[tpe.idx].length > tpe.length
+                tpe.idx >= arguments_.length ||
+                !IsString(arguments_[tpe.idx]) ||
+                arguments_[tpe.idx].length > tpe.length
             ) {
                 throw new Error('Incorrect string length');
             }
@@ -179,7 +179,7 @@ function validateMaxLength(target: any, propertyName: string | symbol, args: IAr
  * @param propertyName A method name
  * @param args A list of parameters in method
  */
-function validateMinLength(target: any, propertyName: string | symbol, args: IArguments) {
+function validateMinLength(target: any, propertyName: string | symbol, arguments_) {
     let minLengthParameters: StringLengthMetadataType[] = Reflect.getOwnMetadata(
         minLengthMetadataKey,
         target,
@@ -188,9 +188,9 @@ function validateMinLength(target: any, propertyName: string | symbol, args: IAr
     if (minLengthParameters) {
         for (let tpe of minLengthParameters) {
             if (
-                tpe.idx >= args.length ||
-                !IsString(args[tpe.idx]) ||
-                args[tpe.idx].length <= tpe.length
+                tpe.idx >= arguments_.length ||
+                !IsString(arguments_[tpe.idx]) ||
+                arguments_[tpe.idx].length <= tpe.length
             ) {
                 throw new Error('String is short');
             }
@@ -204,7 +204,7 @@ function validateMinLength(target: any, propertyName: string | symbol, args: IAr
  * @param propertyName A method name
  * @param args A list of parameters in method
  */
-function validateRegex(target: any, propertyName: string | symbol, args: IArguments) {
+function validateRegex(target: any, propertyName: string | symbol, arguments_) {
     let regexMetadataTypes: RegexMetadataType[] = Reflect.getOwnMetadata(
         regexMetadataKey,
         target,
@@ -213,9 +213,9 @@ function validateRegex(target: any, propertyName: string | symbol, args: IArgume
     if (regexMetadataTypes) {
         for (let tpe of regexMetadataTypes) {
             if (
-                tpe.idx >= args.length ||
-                !IsString(args[tpe.idx]) ||
-                !tpe.regex.test(args[tpe.idx])
+                tpe.idx >= arguments_.length ||
+                !IsString(arguments_[tpe.idx]) ||
+                !tpe.regex.test(arguments_[tpe.idx])
             ) {
                 throw new Error('Failed regex at argument');
             }

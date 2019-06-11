@@ -12,7 +12,7 @@ import {
     NullReferenceError,
     MaxLengthError,
     RegExError,
-} from '../../';
+} from '../..';
 
 describe('@validator decorator test', () => {
     test('Check minValue decorator', () => {

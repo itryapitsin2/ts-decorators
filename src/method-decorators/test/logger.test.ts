@@ -1,4 +1,4 @@
-import { logMethod, logParameter } from '../../';
+import { logMethod, logParameter } from '../..';
 
 describe('logProperty decorators test', () => {
     test('Check full method logging', () => {
@@ -36,8 +36,7 @@ describe('logProperty decorators test', () => {
 
         class TestClass {
             @logMethod(() => false)
-            public testMethod(param1: string) {
-            }
+            public testMethod(param1: string) {}
         }
 
         const testClass = new TestClass();
@@ -57,8 +56,7 @@ describe('logProperty decorators test', () => {
 
         class TestClass {
             @logMethod(false)
-            public testMethod(param1: string) {
-            }
+            public testMethod(param1: string) {}
         }
 
         const testClass = new TestClass();
