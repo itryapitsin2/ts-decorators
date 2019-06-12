@@ -62,3 +62,6 @@ typings/
 
 # IntelliJ IDEA
 .idea
+
+# Generated API-documentation
+docs
