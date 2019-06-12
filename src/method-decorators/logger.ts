@@ -1,12 +1,12 @@
+import { INFO_COLOR, IsBoolean, IsFunction, Lambda } from '../types';
+
 /**
- * Log function parameter to console
+ * Log function parameter into console
  * @param target
  * @param key
  * @param index
  */
-import { INFO_COLOR, IsBoolean, IsFunction, Lambda } from '../types';
-
-export function logParameter(target: any, key: string, index: number) {
+export function logParameter(target: any, key: string, index: number): void {
     const metadataKey = `__log_${key}_parameters`;
     if (Array.isArray(target[metadataKey])) {
         target[metadataKey].push(index);
@@ -18,9 +18,17 @@ export function logParameter(target: any, key: string, index: number) {
 /**
  * Log method params and result to console
  * @param enabled: set false in production mode
+ * ```typescript
+ * class MyClass {
+ *     @logMethod()
+ *     myMethod () {
+ *
+ *     }
+ * }
+ * ```
  */
-export function logMethod(enabled: boolean | Lambda = true) {
-    return function(target: any, key: string, descriptor: TypedPropertyDescriptor<any>) {
+export function logMethod(enabled: boolean | Lambda = true): MethodDecorator {
+    return function(target: any, key: string, descriptor: TypedPropertyDescriptor<any>): TypedPropertyDescriptor<any> {
         if (IsBoolean(enabled) && !enabled) {
             return;
         }
@@ -33,7 +41,7 @@ export function logMethod(enabled: boolean | Lambda = true) {
         const originalMethod = descriptor.value;
 
         //editing the descriptor/value parameter
-        descriptor.value = function(...arguments_: any[]) {
+        descriptor.value = function(...arguments_: any[]): any {
             const metadataKey = `__log_${key}_parameters`;
             const indices = target[metadataKey];
 
