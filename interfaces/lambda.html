@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>NullReferenceError | @itryapitsin/ts-decorators</title>
+	<title>Lambda | @itryapitsin/ts-decorators</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,29 +56,63 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/_errors_.html">&quot;errors&quot;</a>
-				</li>
-				<li>
-					<a href="_errors_.nullreferenceerror.html">NullReferenceError</a>
+					<a href="lambda.html">Lambda</a>
 				</li>
 			</ul>
-			<h1>Class NullReferenceError</h1>
+			<h1>Interface Lambda&lt;R&gt;</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Type of lambda expression with single argument</p>
+					</div>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-type-parameters">
+				<h3>Type parameters</h3>
+				<ul class="tsd-type-parameters">
+					<li>
+						<h4>R</h4>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Type of outcome result. void type by default.</p>
+								<pre><code class="language-typescript"><span class="hljs-keyword">let</span> helloWorldExp: Lambda&lt;<span class="hljs-built_in">string</span>&gt; = (): <span class="hljs-function"><span class="hljs-params">string</span> =&gt;</span> <span class="hljs-string">"Hello world"</span>;</code></pre>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="tsd-signature-type">Error</span>
-						<ul class="tsd-hierarchy">
-							<li>
-								<span class="target">NullReferenceError</span>
-							</li>
-						</ul>
+						<span class="target">Lambda</span>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel">
+				<h3 class="tsd-before-signature">Callable</h3>
+				<ul class="tsd-signatures tsd-kind-interface tsd-has-type-parameter">
+					<li class="tsd-signature tsd-kind-icon">__call<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">R</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/1e28c6f/src/types.ts#L121">types.ts:121</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Type of lambda expression with single argument</p>
+							</div>
+						</div>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">R</span></h4>
 					</li>
 				</ul>
 			</section>
@@ -87,92 +121,23 @@
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>Constructors</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="_errors_.nullreferenceerror.html#constructor" class="tsd-kind-icon">constructor</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_errors_.nullreferenceerror.html#message" class="tsd-kind-icon">message</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_errors_.nullreferenceerror.html#name" class="tsd-kind-icon">name</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="_errors_.nullreferenceerror.html#stack" class="tsd-kind-icon">stack</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="_errors_.nullreferenceerror.html#error" class="tsd-kind-icon">Error</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="lambda.html#name" class="tsd-kind-icon">name</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Constructors</h2>
-				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
-					<a name="constructor" class="tsd-anchor"></a>
-					<h3>constructor</h3>
-					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Null<wbr>Reference<wbr>Error<span class="tsd-signature-symbol">(</span>m<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_errors_.nullreferenceerror.html" class="tsd-signature-type">NullReferenceError</a></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/a4dca97/src/errors.ts#L15">errors.ts:15</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> m: <span class="tsd-signature-type">string</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="_errors_.nullreferenceerror.html" class="tsd-signature-type">NullReferenceError</a></h4>
-						</li>
-					</ul>
-				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-					<a name="message" class="tsd-anchor"></a>
-					<h3>message</h3>
-					<div class="tsd-signature tsd-kind-icon">message<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<p>Inherited from Error.message</p>
-						<ul>
-							<li>Defined in /home/travis/build/itryapitsin2/ts-decorators/node_modules/typedoc/node_modules/typescript/lib/lib.es5.d.ts:964</li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="name" class="tsd-anchor"></a>
-					<h3>name</h3>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> name</h3>
 					<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from Error.name</p>
 						<ul>
-							<li>Defined in /home/travis/build/itryapitsin2/ts-decorators/node_modules/typedoc/node_modules/typescript/lib/lib.es5.d.ts:963</li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
-					<a name="stack" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> stack</h3>
-					<div class="tsd-signature tsd-kind-icon">stack<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<p>Inherited from Error.stack</p>
-						<p>Overrides Error.stack</p>
-						<ul>
-							<li>Defined in /home/travis/build/itryapitsin2/ts-decorators/node_modules/typedoc/node_modules/typescript/lib/lib.es5.d.ts:965</li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
-					<a name="error" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagStatic">Static</span> Error</h3>
-					<div class="tsd-signature tsd-kind-icon">Error<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ErrorConstructor</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in /home/travis/build/itryapitsin2/ts-decorators/node_modules/typedoc/node_modules/typescript/lib/lib.es5.d.ts:974</li>
+							<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/1e28c6f/src/types.ts#L123">types.ts:123</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -184,79 +149,22 @@
 					<li class="globals  ">
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_class_decorators_mixin_.html">"class-<wbr>decorators/mixin"</a>
-					</li>
-					<li class="current tsd-kind-external-module">
-						<a href="../modules/_errors_.html">"errors"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_method_decorators_cached_.html">"method-<wbr>decorators/cached"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_method_decorators_common_.html">"method-<wbr>decorators/common"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_method_decorators_logger_.html">"method-<wbr>decorators/logger"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_method_decorators_validator_.html">"method-<wbr>decorators/validator"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_property_decorators_deprecated_.html">"property-<wbr>decorators/deprecated"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_property_decorators_logger_.html">"property-<wbr>decorators/logger"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_property_decorators_validator_.html">"property-<wbr>decorators/validator"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_types_.html">"types"</a>
-					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-class tsd-parent-kind-external-module">
-						<a href="_errors_.maxlengtherror.html" class="tsd-kind-icon">Max<wbr>Length<wbr>Error</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-external-module">
-						<a href="_errors_.maxvalueerror.html" class="tsd-kind-icon">Max<wbr>Value<wbr>Error</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-external-module">
-						<a href="_errors_.minlengtherror.html" class="tsd-kind-icon">Min<wbr>Length<wbr>Error</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-external-module">
-						<a href="_errors_.minvalueerror.html" class="tsd-kind-icon">Min<wbr>Value<wbr>Error</a>
-					</li>
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-class tsd-parent-kind-external-module">
-						<a href="_errors_.nullreferenceerror.html" class="tsd-kind-icon">Null<wbr>Reference<wbr>Error</a>
+					<li class="current tsd-kind-interface tsd-has-type-parameter">
+						<a href="lambda.html" class="tsd-kind-icon">Lambda</a>
 						<ul>
-							<li class=" tsd-kind-constructor tsd-parent-kind-class">
-								<a href="_errors_.nullreferenceerror.html#constructor" class="tsd-kind-icon">constructor</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="_errors_.nullreferenceerror.html#message" class="tsd-kind-icon">message</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="_errors_.nullreferenceerror.html#name" class="tsd-kind-icon">name</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
-								<a href="_errors_.nullreferenceerror.html#stack" class="tsd-kind-icon">stack</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
-								<a href="_errors_.nullreferenceerror.html#error" class="tsd-kind-icon">Error</a>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="lambda.html#name" class="tsd-kind-icon">name</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-class tsd-parent-kind-external-module">
-						<a href="_errors_.regexerror.html" class="tsd-kind-icon">Reg<wbr>ExError</a>
-					</li>
 				</ul>
 			</nav>
 		</div>

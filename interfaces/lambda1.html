@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>RuleFunction | @itryapitsin/ts-decorators</title>
+	<title>Lambda1 | @itryapitsin/ts-decorators</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,54 +56,105 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/_method_decorators_validator_.html">&quot;method-decorators/validator&quot;</a>
-				</li>
-				<li>
-					<a href="_method_decorators_validator_.rulefunction.html">RuleFunction</a>
+					<a href="lambda1.html">Lambda1</a>
 				</li>
 			</ul>
-			<h1>Interface RuleFunction</h1>
+			<h1>Interface Lambda1&lt;T, R&gt;</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Type of lambda expression with single argument</p>
+					</div>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-type-parameters">
+				<h3>Type parameters</h3>
+				<ul class="tsd-type-parameters">
+					<li>
+						<h4>T</h4>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Type of income argument</p>
+							</div>
+						</div>
+					</li>
+					<li>
+						<h4>R</h4>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Type of outcome result. void type by default.</p>
+								<pre><code class="language-typescript"><span class="hljs-keyword">let</span> squaringExp: Lambda1&lt;<span class="hljs-built_in">number</span>, <span class="hljs-built_in">number</span>&gt; = (num: <span class="hljs-built_in">number</span>): <span class="hljs-function"><span class="hljs-params">number</span> =&gt;</span> num * num;</code></pre>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">RuleFunction</span>
+						<span class="target">Lambda1</span>
 					</li>
 				</ul>
 			</section>
 			<section class="tsd-panel">
 				<h3 class="tsd-before-signature">Callable</h3>
-				<ul class="tsd-signatures tsd-kind-interface tsd-parent-kind-external-module">
-					<li class="tsd-signature tsd-kind-icon">__call<span class="tsd-signature-symbol">(</span>target<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, propertyName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">symbol</span>, args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IArguments</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+				<ul class="tsd-signatures tsd-kind-interface tsd-has-type-parameter">
+					<li class="tsd-signature tsd-kind-icon">__call<span class="tsd-signature-symbol">(</span>arg1<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">R</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/a4dca97/src/method-decorators/validator.ts#L19">method-decorators/validator.ts:19</a></li>
+								<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/1e28c6f/src/types.ts#L134">types.ts:134</a></li>
 							</ul>
 						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Type of lambda expression with single argument</p>
+							</div>
+						</div>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
-								<h5>target: <span class="tsd-signature-type">any</span></h5>
-							</li>
-							<li>
-								<h5>propertyName: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">symbol</span></h5>
-							</li>
-							<li>
-								<h5>args: <span class="tsd-signature-type">IArguments</span></h5>
+								<h5>arg1: <span class="tsd-signature-type">T</span></h5>
 							</li>
 						</ul>
-						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">R</span></h4>
 					</li>
 				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="lambda1.html#name" class="tsd-kind-icon">name</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="name" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> name</h3>
+					<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/1e28c6f/src/types.ts#L136">types.ts:136</a></li>
+						</ul>
+					</aside>
+				</section>
 			</section>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
@@ -112,107 +163,22 @@
 					<li class="globals  ">
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_class_decorators_mixin_.html">"class-<wbr>decorators/mixin"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_errors_.html">"errors"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_method_decorators_cached_.html">"method-<wbr>decorators/cached"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_method_decorators_common_.html">"method-<wbr>decorators/common"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_method_decorators_logger_.html">"method-<wbr>decorators/logger"</a>
-					</li>
-					<li class="current tsd-kind-external-module">
-						<a href="../modules/_method_decorators_validator_.html">"method-<wbr>decorators/validator"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_property_decorators_deprecated_.html">"property-<wbr>decorators/deprecated"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_property_decorators_logger_.html">"property-<wbr>decorators/logger"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_property_decorators_validator_.html">"property-<wbr>decorators/validator"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_types_.html">"types"</a>
-					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="_method_decorators_validator_.regexmetadatatype.html" class="tsd-kind-icon">Regex<wbr>Metadata<wbr>Type</a>
-					</li>
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-interface tsd-parent-kind-external-module">
-						<a href="_method_decorators_validator_.rulefunction.html" class="tsd-kind-icon">Rule<wbr>Function</a>
+					<li class="current tsd-kind-interface tsd-has-type-parameter">
+						<a href="lambda1.html" class="tsd-kind-icon">Lambda1</a>
+						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="lambda1.html#name" class="tsd-kind-icon">name</a>
+							</li>
+						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="_method_decorators_validator_.stringlengthmetadatatype.html" class="tsd-kind-icon">String<wbr>Length<wbr>Metadata<wbr>Type</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="../modules/_method_decorators_validator_.html#maxlengthmetadatakey" class="tsd-kind-icon">max<wbr>Length<wbr>Metadata<wbr>Key</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="../modules/_method_decorators_validator_.html#minlengthmetadatakey" class="tsd-kind-icon">min<wbr>Length<wbr>Metadata<wbr>Key</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="../modules/_method_decorators_validator_.html#regexmetadatakey" class="tsd-kind-icon">regex<wbr>Metadata<wbr>Key</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="../modules/_method_decorators_validator_.html#requiredmetadatakey" class="tsd-kind-icon">required<wbr>Metadata<wbr>Key</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-parent-kind-external-module">
-						<a href="../modules/_method_decorators_validator_.html#rulepool" class="tsd-kind-icon">rule<wbr>Pool</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported">
-						<a href="../modules/_method_decorators_validator_.html#customvalidator" class="tsd-kind-icon">custom<wbr>Validator</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="../modules/_method_decorators_validator_.html#isemail" class="tsd-kind-icon">is<wbr>Email</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="../modules/_method_decorators_validator_.html#maxlength" class="tsd-kind-icon">max<wbr>Length</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="../modules/_method_decorators_validator_.html#minlength" class="tsd-kind-icon">min<wbr>Length</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="../modules/_method_decorators_validator_.html#notemptystring" class="tsd-kind-icon">not<wbr>Empty<wbr>String</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="../modules/_method_decorators_validator_.html#notnull" class="tsd-kind-icon">not<wbr>Null</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="../modules/_method_decorators_validator_.html#regex" class="tsd-kind-icon">regex</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-external-module">
-						<a href="../modules/_method_decorators_validator_.html#trycatch" class="tsd-kind-icon">try<wbr>Catch</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-external-module">
-						<a href="../modules/_method_decorators_validator_.html#validate" class="tsd-kind-icon">validate</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="../modules/_method_decorators_validator_.html#validatemaxlength" class="tsd-kind-icon">validate<wbr>Max<wbr>Length</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="../modules/_method_decorators_validator_.html#validateminlength" class="tsd-kind-icon">validate<wbr>Min<wbr>Length</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="../modules/_method_decorators_validator_.html#validatenulls" class="tsd-kind-icon">validate<wbr>Nulls</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="../modules/_method_decorators_validator_.html#validateregex" class="tsd-kind-icon">validate<wbr>Regex</a>
-					</li>
 				</ul>
 			</nav>
 		</div>
