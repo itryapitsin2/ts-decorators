@@ -11,7 +11,7 @@ export function deprecated(enabled: boolean = true): PropertyDecorator {
         }
         let value = target[propertyKey];
         Reflect.defineProperty(target, propertyKey, {
-            get: () => {
+            get: (): any => {
                 console.log(
                     `%c "${propertyKey}" field is marked as 💩 (deprecated)`,
                     `color: ${WARNING_COLOR}`,

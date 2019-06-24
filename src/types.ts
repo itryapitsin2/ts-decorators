@@ -53,7 +53,7 @@ export function IsObject(x: any): boolean {
  * @param x  tested instance
  */
 export function IsFunction(x: any): boolean {
-    return typeof x === 'function';
+    return typeof x === 'function' || x instanceof Function;
 }
 
 /**
@@ -64,7 +64,7 @@ export function IsFunction(x: any): boolean {
  * @param x  tested instance
  */
 export function IsString(x: any): boolean {
-    return typeof x === 'string';
+    return typeof x === 'string' || x instanceof String;
 }
 
 /**
@@ -75,7 +75,7 @@ export function IsString(x: any): boolean {
  * @param x  tested instance
  */
 export function IsBoolean(x: any) {
-    return typeof x === 'boolean';
+    return typeof x === 'boolean' || x instanceof Boolean;
 }
 
 /**
@@ -86,7 +86,7 @@ export function IsBoolean(x: any) {
  * @param x  tested instance
  */
 export function IsNumber(x: any): boolean {
-    return typeof x === 'number';
+    return typeof x === 'number' || x instanceof Number;
 }
 
 /**
@@ -111,6 +111,18 @@ export function IsNullOrUndefined(x: any): boolean {
     return IsUndefined(x) || IsNull(x);
 }
 
+export function IsPrimitive(x: any): boolean {
+    return IsString(x) || IsBoolean(x) || IsNumber(x);
+}
+
+export function IsArray(object: any): boolean {
+    if (object === Array) {
+        return true;
+    } else {
+        return Array.isArray(object);
+    }
+}
+
 /**
  * Type of lambda expression with single argument
  * @typeparam R Type of outcome result. void type by default.
@@ -120,6 +132,7 @@ export function IsNullOrUndefined(x: any): boolean {
  */
 export interface Lambda<R = void> {
     (): R;
+
     name?: string;
 }
 
@@ -133,6 +146,7 @@ export interface Lambda<R = void> {
  */
 export interface Lambda1<T, R = void> {
     (arg1: T): R;
+
     name?: string;
 }
 
