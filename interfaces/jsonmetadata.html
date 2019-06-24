@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>NullReferenceError | @itryapitsin/ts-decorators</title>
+	<title>JsonMetaData | @itryapitsin/ts-decorators</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,26 +56,29 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="nullreferenceerror.html">NullReferenceError</a>
+					<a href="jsonmetadata.html">JsonMetaData</a>
 				</li>
 			</ul>
-			<h1>Class NullReferenceError</h1>
+			<h1>Interface JsonMetaData&lt;T&gt;</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-type-parameters">
+				<h3>Type parameters</h3>
+				<ul class="tsd-type-parameters">
+					<li>
+						<h4>T</h4>
+					</li>
+				</ul>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="tsd-signature-type">Error</span>
-						<ul class="tsd-hierarchy">
-							<li>
-								<span class="target">NullReferenceError</span>
-							</li>
-						</ul>
+						<span class="target">JsonMetaData</span>
 					</li>
 				</ul>
 			</section>
@@ -84,92 +87,54 @@
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>Constructors</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="nullreferenceerror.html#constructor" class="tsd-kind-icon">constructor</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="nullreferenceerror.html#message" class="tsd-kind-icon">message</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="nullreferenceerror.html#name" class="tsd-kind-icon">name</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="nullreferenceerror.html#stack" class="tsd-kind-icon">stack</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="nullreferenceerror.html#error" class="tsd-kind-icon">Error</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="jsonmetadata.html#clazz" class="tsd-kind-icon">clazz</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="jsonmetadata.html#name" class="tsd-kind-icon">name</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Constructors</h2>
-				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
-					<a name="constructor" class="tsd-anchor"></a>
-					<h3>constructor</h3>
-					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Null<wbr>Reference<wbr>Error<span class="tsd-signature-symbol">(</span>m<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="nullreferenceerror.html" class="tsd-signature-type">NullReferenceError</a></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/d6de3af/src/errors.ts#L15">errors.ts:15</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> m: <span class="tsd-signature-type">string</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="nullreferenceerror.html" class="tsd-signature-type">NullReferenceError</a></h4>
-						</li>
-					</ul>
-				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-					<a name="message" class="tsd-anchor"></a>
-					<h3>message</h3>
-					<div class="tsd-signature tsd-kind-icon">message<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="clazz" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> clazz</h3>
+					<div class="tsd-signature tsd-kind-icon">clazz<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from Error.message</p>
 						<ul>
-							<li>Defined in /home/travis/build/itryapitsin2/ts-decorators/node_modules/typedoc/node_modules/typescript/lib/lib.es5.d.ts:964</li>
+							<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/d6de3af/src/property-decorators/deserializer.ts#L9">property-decorators/deserializer.ts:9</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5>constructor<span class="tsd-signature-symbol">: </span>function</h5>
+								<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-type-literal tsd-is-not-exported">
+									<li class="tsd-signature tsd-kind-icon">new __type<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<aside class="tsd-sources">
+											<ul>
+												<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/d6de3af/src/property-decorators/deserializer.ts#L9">property-decorators/deserializer.ts:9</a></li>
+											</ul>
+										</aside>
+										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">T</span></h4>
+									</li>
+							</ul>        </li>
+						</ul>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="name" class="tsd-anchor"></a>
-					<h3>name</h3>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> name</h3>
 					<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from Error.name</p>
 						<ul>
-							<li>Defined in /home/travis/build/itryapitsin2/ts-decorators/node_modules/typedoc/node_modules/typescript/lib/lib.es5.d.ts:963</li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
-					<a name="stack" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> stack</h3>
-					<div class="tsd-signature tsd-kind-icon">stack<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<p>Inherited from Error.stack</p>
-						<p>Overrides Error.stack</p>
-						<ul>
-							<li>Defined in /home/travis/build/itryapitsin2/ts-decorators/node_modules/typedoc/node_modules/typescript/lib/lib.es5.d.ts:965</li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
-					<a name="error" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagStatic">Static</span> Error</h3>
-					<div class="tsd-signature tsd-kind-icon">Error<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ErrorConstructor</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in /home/travis/build/itryapitsin2/ts-decorators/node_modules/typedoc/node_modules/typescript/lib/lib.es5.d.ts:974</li>
+							<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/d6de3af/src/property-decorators/deserializer.ts#L7">property-decorators/deserializer.ts:7</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -187,23 +152,14 @@
 				<ul class="before-current">
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-class">
-						<a href="nullreferenceerror.html" class="tsd-kind-icon">Null<wbr>Reference<wbr>Error</a>
+					<li class="current tsd-kind-interface tsd-has-type-parameter">
+						<a href="jsonmetadata.html" class="tsd-kind-icon">Json<wbr>Meta<wbr>Data</a>
 						<ul>
-							<li class=" tsd-kind-constructor tsd-parent-kind-class">
-								<a href="nullreferenceerror.html#constructor" class="tsd-kind-icon">constructor</a>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="jsonmetadata.html#clazz" class="tsd-kind-icon">clazz</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="nullreferenceerror.html#message" class="tsd-kind-icon">message</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="nullreferenceerror.html#name" class="tsd-kind-icon">name</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
-								<a href="nullreferenceerror.html#stack" class="tsd-kind-icon">stack</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
-								<a href="nullreferenceerror.html#error" class="tsd-kind-icon">Error</a>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="jsonmetadata.html#name" class="tsd-kind-icon">name</a>
 							</li>
 						</ul>
 					</li>

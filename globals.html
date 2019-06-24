@@ -82,6 +82,7 @@
 							<h3>Interfaces</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-interface tsd-is-not-exported"><a href="interfaces/cacheitem.html" class="tsd-kind-icon">Cache<wbr>Item</a></li>
+								<li class="tsd-kind-interface tsd-has-type-parameter"><a href="interfaces/jsonmetadata.html" class="tsd-kind-icon">Json<wbr>Meta<wbr>Data</a></li>
 								<li class="tsd-kind-interface tsd-has-type-parameter"><a href="interfaces/lambda.html" class="tsd-kind-icon">Lambda</a></li>
 								<li class="tsd-kind-interface tsd-has-type-parameter"><a href="interfaces/lambda1.html" class="tsd-kind-icon">Lambda1</a></li>
 								<li class="tsd-kind-interface tsd-is-not-exported"><a href="interfaces/regexmetadatatype.html" class="tsd-kind-icon">Regex<wbr>Metadata<wbr>Type</a></li>
@@ -101,6 +102,7 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-variable"><a href="globals.html#info_color" class="tsd-kind-icon">INFO_<wbr>COLOR</a></li>
 								<li class="tsd-kind-variable"><a href="globals.html#warning_color" class="tsd-kind-icon">WARNING_<wbr>COLOR</a></li>
+								<li class="tsd-kind-variable tsd-is-not-exported"><a href="globals.html#jsonmetadatakey" class="tsd-kind-icon">json<wbr>Metadata<wbr>Key</a></li>
 								<li class="tsd-kind-variable tsd-is-not-exported"><a href="globals.html#maxlengthmetadatakey" class="tsd-kind-icon">max<wbr>Length<wbr>Metadata<wbr>Key</a></li>
 								<li class="tsd-kind-variable tsd-is-not-exported"><a href="globals.html#minlengthmetadatakey" class="tsd-kind-icon">min<wbr>Length<wbr>Metadata<wbr>Key</a></li>
 								<li class="tsd-kind-variable tsd-is-not-exported"><a href="globals.html#regexmetadatakey" class="tsd-kind-icon">regex<wbr>Metadata<wbr>Key</a></li>
@@ -111,6 +113,7 @@
 						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-function"><a href="globals.html#isarray" class="tsd-kind-icon">Is<wbr>Array</a></li>
 								<li class="tsd-kind-function"><a href="globals.html#isboolean" class="tsd-kind-icon">Is<wbr>Boolean</a></li>
 								<li class="tsd-kind-function"><a href="globals.html#isfunction" class="tsd-kind-icon">Is<wbr>Function</a></li>
 								<li class="tsd-kind-function"><a href="globals.html#isnotnullandundefined" class="tsd-kind-icon">Is<wbr>Not<wbr>Null<wbr>And<wbr>Undefined</a></li>
@@ -118,15 +121,20 @@
 								<li class="tsd-kind-function"><a href="globals.html#isnullorundefined" class="tsd-kind-icon">Is<wbr>Null<wbr>OrUndefined</a></li>
 								<li class="tsd-kind-function"><a href="globals.html#isnumber" class="tsd-kind-icon">Is<wbr>Number</a></li>
 								<li class="tsd-kind-function"><a href="globals.html#isobject" class="tsd-kind-icon">Is<wbr>Object</a></li>
+								<li class="tsd-kind-function"><a href="globals.html#isprimitive" class="tsd-kind-icon">Is<wbr>Primitive</a></li>
 								<li class="tsd-kind-function"><a href="globals.html#isstring" class="tsd-kind-icon">Is<wbr>String</a></li>
 								<li class="tsd-kind-function"><a href="globals.html#issymbol" class="tsd-kind-icon">Is<wbr>Symbol</a></li>
 								<li class="tsd-kind-function"><a href="globals.html#isundefined" class="tsd-kind-icon">Is<wbr>Undefined</a></li>
 								<li class="tsd-kind-function"><a href="globals.html#cached" class="tsd-kind-icon">cached</a></li>
 								<li class="tsd-kind-function tsd-has-type-parameter tsd-is-not-exported"><a href="globals.html#customvalidator" class="tsd-kind-icon">custom<wbr>Validator</a></li>
 								<li class="tsd-kind-function"><a href="globals.html#deprecated" class="tsd-kind-icon">deprecated</a></li>
+								<li class="tsd-kind-function tsd-has-type-parameter"><a href="globals.html#deserialize" class="tsd-kind-icon">deserialize</a></li>
+								<li class="tsd-kind-function"><a href="globals.html#getclazz" class="tsd-kind-icon">get<wbr>Clazz</a></li>
+								<li class="tsd-kind-function tsd-has-type-parameter"><a href="globals.html#getjsonproperty" class="tsd-kind-icon">get<wbr>Json<wbr>Property</a></li>
 								<li class="tsd-kind-function tsd-is-not-exported"><a href="globals.html#getmixables" class="tsd-kind-icon">get<wbr>Mixables</a></li>
 								<li class="tsd-kind-function tsd-is-not-exported"><a href="globals.html#getpropertydescriptormap" class="tsd-kind-icon">get<wbr>Property<wbr>Descriptor<wbr>Map</a></li>
 								<li class="tsd-kind-function"><a href="globals.html#isemail" class="tsd-kind-icon">is<wbr>Email</a></li>
+								<li class="tsd-kind-function tsd-has-type-parameter"><a href="globals.html#jsonproperty" class="tsd-kind-icon">json<wbr>Property</a></li>
 								<li class="tsd-kind-function"><a href="globals.html#logmethod" class="tsd-kind-icon">log<wbr>Method</a></li>
 								<li class="tsd-kind-function"><a href="globals.html#logparameter" class="tsd-kind-icon">log<wbr>Parameter</a></li>
 								<li class="tsd-kind-function"><a href="globals.html#logproperty" class="tsd-kind-icon">log<wbr>Property</a></li>
@@ -138,7 +146,9 @@
 								<li class="tsd-kind-function"><a href="globals.html#mixin" class="tsd-kind-icon">mixin</a></li>
 								<li class="tsd-kind-function"><a href="globals.html#notemptystring" class="tsd-kind-icon">not<wbr>Empty<wbr>String</a></li>
 								<li class="tsd-kind-function"><a href="globals.html#notnull" class="tsd-kind-icon">not<wbr>Null</a></li>
+								<li class="tsd-kind-function tsd-is-not-exported"><a href="globals.html#propertymetadatafn" class="tsd-kind-icon">property<wbr>Metadata<wbr>Fn</a></li>
 								<li class="tsd-kind-function"><a href="globals.html#regex" class="tsd-kind-icon">regex</a></li>
+								<li class="tsd-kind-function tsd-has-type-parameter"><a href="globals.html#serialize" class="tsd-kind-icon">serialize</a></li>
 								<li class="tsd-kind-function"><a href="globals.html#trycatch" class="tsd-kind-icon">try<wbr>Catch</a></li>
 								<li class="tsd-kind-function"><a href="globals.html#validate" class="tsd-kind-icon">validate</a></li>
 								<li class="tsd-kind-function tsd-is-not-exported"><a href="globals.html#validatemaxlength" class="tsd-kind-icon">validate<wbr>Max<wbr>Length</a></li>
@@ -158,7 +168,7 @@
 					<div class="tsd-signature tsd-kind-icon">Constructor<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/1e28c6f/src/types.ts#L142">types.ts:142</a></li>
+							<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/d6de3af/src/types.ts#L156">types.ts:156</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -178,7 +188,7 @@
 					<div class="tsd-signature tsd-kind-icon">Mixin<span class="tsd-signature-symbol">:</span> <a href="globals.html#constructor" class="tsd-signature-type">Constructor</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/1e28c6f/src/types.ts#L147">types.ts:147</a></li>
+							<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/d6de3af/src/types.ts#L161">types.ts:161</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -196,7 +206,7 @@
 					<div class="tsd-signature tsd-kind-icon">INFO_<wbr>COLOR<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"#208BDA"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;#208BDA&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/1e28c6f/src/types.ts#L152">types.ts:152</a></li>
+							<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/d6de3af/src/types.ts#L166">types.ts:166</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -211,7 +221,7 @@
 					<div class="tsd-signature tsd-kind-icon">WARNING_<wbr>COLOR<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"#DA940B"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;#DA940B&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/1e28c6f/src/types.ts#L157">types.ts:157</a></li>
+							<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/d6de3af/src/types.ts#L171">types.ts:171</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -221,12 +231,22 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-variable tsd-is-not-exported">
+					<a name="jsonmetadatakey" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> json<wbr>Metadata<wbr>Key</h3>
+					<div class="tsd-signature tsd-kind-icon">json<wbr>Metadata<wbr>Key<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"json-property"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;json-property&quot;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/d6de3af/src/property-decorators/deserializer.ts#L4">property-decorators/deserializer.ts:4</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-is-not-exported">
 					<a name="maxlengthmetadatakey" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> max<wbr>Length<wbr>Metadata<wbr>Key</h3>
 					<div class="tsd-signature tsd-kind-icon">max<wbr>Length<wbr>Metadata<wbr>Key<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">unique symbol</span><span class="tsd-signature-symbol"> =&nbsp;Symbol(&#x27;max-length&#x27;)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/1e28c6f/src/method-decorators/validator.ts#L15">method-decorators/validator.ts:15</a></li>
+							<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/d6de3af/src/method-decorators/validator.ts#L15">method-decorators/validator.ts:15</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -236,7 +256,7 @@
 					<div class="tsd-signature tsd-kind-icon">min<wbr>Length<wbr>Metadata<wbr>Key<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">unique symbol</span><span class="tsd-signature-symbol"> =&nbsp;Symbol(&#x27;min-length&#x27;)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/1e28c6f/src/method-decorators/validator.ts#L16">method-decorators/validator.ts:16</a></li>
+							<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/d6de3af/src/method-decorators/validator.ts#L16">method-decorators/validator.ts:16</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -246,7 +266,7 @@
 					<div class="tsd-signature tsd-kind-icon">regex<wbr>Metadata<wbr>Key<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">unique symbol</span><span class="tsd-signature-symbol"> =&nbsp;Symbol(&#x27;regex&#x27;)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/1e28c6f/src/method-decorators/validator.ts#L17">method-decorators/validator.ts:17</a></li>
+							<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/d6de3af/src/method-decorators/validator.ts#L17">method-decorators/validator.ts:17</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -256,7 +276,7 @@
 					<div class="tsd-signature tsd-kind-icon">required<wbr>Metadata<wbr>Key<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">unique symbol</span><span class="tsd-signature-symbol"> =&nbsp;Symbol(&#x27;required&#x27;)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/1e28c6f/src/method-decorators/validator.ts#L14">method-decorators/validator.ts:14</a></li>
+							<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/d6de3af/src/method-decorators/validator.ts#L14">method-decorators/validator.ts:14</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -266,7 +286,7 @@
 					<div class="tsd-signature tsd-kind-icon">rule<wbr>Pool<span class="tsd-signature-symbol">:</span> <a href="interfaces/rulefunction.html" class="tsd-signature-type">RuleFunction</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[validateNulls,validateMaxLength,validateMinLength,validateRegex,]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/1e28c6f/src/method-decorators/validator.ts#L229">method-decorators/validator.ts:229</a></li>
+							<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/d6de3af/src/method-decorators/validator.ts#L229">method-decorators/validator.ts:229</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -279,6 +299,29 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
 				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="isarray" class="tsd-anchor"></a>
+					<h3>Is<wbr>Array</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">Is<wbr>Array<span class="tsd-signature-symbol">(</span>object<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/d6de3af/src/types.ts#L118">types.ts:118</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>object: <span class="tsd-signature-type">any</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
 					<a name="isboolean" class="tsd-anchor"></a>
 					<h3>Is<wbr>Boolean</h3>
 					<ul class="tsd-signatures tsd-kind-function">
@@ -288,7 +331,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/1e28c6f/src/types.ts#L77">types.ts:77</a></li>
+									<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/d6de3af/src/types.ts#L77">types.ts:77</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -321,7 +364,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/1e28c6f/src/types.ts#L55">types.ts:55</a></li>
+									<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/d6de3af/src/types.ts#L55">types.ts:55</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -354,7 +397,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/1e28c6f/src/types.ts#L99">types.ts:99</a></li>
+									<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/d6de3af/src/types.ts#L99">types.ts:99</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -387,7 +430,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/1e28c6f/src/types.ts#L23">types.ts:23</a></li>
+									<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/d6de3af/src/types.ts#L23">types.ts:23</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -420,7 +463,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/1e28c6f/src/types.ts#L110">types.ts:110</a></li>
+									<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/d6de3af/src/types.ts#L110">types.ts:110</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -453,7 +496,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/1e28c6f/src/types.ts#L88">types.ts:88</a></li>
+									<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/d6de3af/src/types.ts#L88">types.ts:88</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -486,7 +529,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/1e28c6f/src/types.ts#L44">types.ts:44</a></li>
+									<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/d6de3af/src/types.ts#L44">types.ts:44</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -510,6 +553,29 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="isprimitive" class="tsd-anchor"></a>
+					<h3>Is<wbr>Primitive</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">Is<wbr>Primitive<span class="tsd-signature-symbol">(</span>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/d6de3af/src/types.ts#L114">types.ts:114</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>x: <span class="tsd-signature-type">any</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
 					<a name="isstring" class="tsd-anchor"></a>
 					<h3>Is<wbr>String</h3>
 					<ul class="tsd-signatures tsd-kind-function">
@@ -519,7 +585,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/1e28c6f/src/types.ts#L66">types.ts:66</a></li>
+									<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/d6de3af/src/types.ts#L66">types.ts:66</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -552,7 +618,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/1e28c6f/src/types.ts#L33">types.ts:33</a></li>
+									<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/d6de3af/src/types.ts#L33">types.ts:33</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -585,7 +651,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/1e28c6f/src/types.ts#L12">types.ts:12</a></li>
+									<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/d6de3af/src/types.ts#L12">types.ts:12</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -617,7 +683,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/1e28c6f/src/method-decorators/cached.ts#L9">method-decorators/cached.ts:9</a></li>
+									<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/d6de3af/src/method-decorators/cached.ts#L9">method-decorators/cached.ts:9</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -639,7 +705,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/1e28c6f/src/method-decorators/validator.ts#L114">method-decorators/validator.ts:114</a></li>
+									<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/d6de3af/src/method-decorators/validator.ts#L114">method-decorators/validator.ts:114</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -671,7 +737,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/1e28c6f/src/property-decorators/deprecated.ts#L7">property-decorators/deprecated.ts:7</a></li>
+									<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/d6de3af/src/property-decorators/deprecated.ts#L7">property-decorators/deprecated.ts:7</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -689,6 +755,113 @@
 						</li>
 					</ul>
 				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-has-type-parameter">
+					<a name="deserialize" class="tsd-anchor"></a>
+					<h3>deserialize</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-has-type-parameter">
+						<li class="tsd-signature tsd-kind-icon">deserialize&lt;T&gt;<span class="tsd-signature-symbol">(</span>clazz<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span>, jsonObject<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/d6de3af/src/property-decorators/deserializer.ts#L56">property-decorators/deserializer.ts:56</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>T</h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>clazz: <span class="tsd-signature-type">object</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter">
+											<h5>constructor<span class="tsd-signature-symbol">: </span>function</h5>
+											<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-type-literal tsd-is-not-exported">
+												<li class="tsd-signature tsd-kind-icon">new __type<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<aside class="tsd-sources">
+														<ul>
+															<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/d6de3af/src/property-decorators/deserializer.ts#L56">property-decorators/deserializer.ts:56</a></li>
+														</ul>
+													</aside>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">T</span></h4>
+												</li>
+										</ul>        </li>
+									</ul>
+								</li>
+								<li>
+									<h5>jsonObject: <span class="tsd-signature-type">any</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">T</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="getclazz" class="tsd-anchor"></a>
+					<h3>get<wbr>Clazz</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Clazz<span class="tsd-signature-symbol">(</span>target<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, propertyKey<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/d6de3af/src/property-decorators/deserializer.ts#L34">property-decorators/deserializer.ts:34</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>target: <span class="tsd-signature-type">any</span></h5>
+								</li>
+								<li>
+									<h5>propertyKey: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-has-type-parameter">
+					<a name="getjsonproperty" class="tsd-anchor"></a>
+					<h3>get<wbr>Json<wbr>Property</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-has-type-parameter">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Json<wbr>Property&lt;T&gt;<span class="tsd-signature-symbol">(</span>target<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, propertyKey<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="interfaces/jsonmetadata.html" class="tsd-signature-type">JsonMetaData</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/d6de3af/src/property-decorators/deserializer.ts#L38">property-decorators/deserializer.ts:38</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>T</h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>target: <span class="tsd-signature-type">any</span></h5>
+								</li>
+								<li>
+									<h5>propertyKey: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="interfaces/jsonmetadata.html" class="tsd-signature-type">JsonMetaData</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-is-not-exported">
 					<a name="getmixables" class="tsd-anchor"></a>
 					<h3>get<wbr>Mixables</h3>
@@ -699,7 +872,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/1e28c6f/src/class-decorators/mixin.ts#L25">class-decorators/mixin.ts:25</a></li>
+									<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/d6de3af/src/class-decorators/mixin.ts#L25">class-decorators/mixin.ts:25</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -730,7 +903,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/1e28c6f/src/class-decorators/mixin.ts#L3">class-decorators/mixin.ts:3</a></li>
+									<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/d6de3af/src/class-decorators/mixin.ts#L3">class-decorators/mixin.ts:3</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -756,7 +929,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/1e28c6f/src/property-decorators/validator.ts#L179">property-decorators/validator.ts:179</a></li>
+									<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/d6de3af/src/property-decorators/validator.ts#L179">property-decorators/validator.ts:179</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -765,6 +938,35 @@
 								</div>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">PropertyDecorator</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-has-type-parameter">
+					<a name="jsonproperty" class="tsd-anchor"></a>
+					<h3>json<wbr>Property</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-has-type-parameter">
+						<li class="tsd-signature tsd-kind-icon">json<wbr>Property&lt;T&gt;<span class="tsd-signature-symbol">(</span>metadata<span class="tsd-signature-symbol">?: </span><a href="interfaces/jsonmetadata.html" class="tsd-signature-type">JsonMetaData</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/d6de3af/src/property-decorators/deserializer.ts#L12">property-decorators/deserializer.ts:12</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>T</h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> metadata: <a href="interfaces/jsonmetadata.html" class="tsd-signature-type">JsonMetaData</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -778,7 +980,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/1e28c6f/src/method-decorators/logger.ts#L30">method-decorators/logger.ts:30</a></li>
+									<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/d6de3af/src/method-decorators/logger.ts#L30">method-decorators/logger.ts:30</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -806,7 +1008,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/1e28c6f/src/method-decorators/logger.ts#L9">method-decorators/logger.ts:9</a></li>
+									<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/d6de3af/src/method-decorators/logger.ts#L9">method-decorators/logger.ts:9</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -842,7 +1044,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/1e28c6f/src/property-decorators/logger.ts#L7">property-decorators/logger.ts:7</a></li>
+									<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/d6de3af/src/property-decorators/logger.ts#L7">property-decorators/logger.ts:7</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -870,7 +1072,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/1e28c6f/src/property-decorators/validator.ts#L135">property-decorators/validator.ts:135</a></li>
+									<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/d6de3af/src/property-decorators/validator.ts#L135">property-decorators/validator.ts:135</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -909,7 +1111,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/1e28c6f/src/property-decorators/validator.ts#L46">property-decorators/validator.ts:46</a></li>
+									<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/d6de3af/src/property-decorators/validator.ts#L46">property-decorators/validator.ts:46</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -948,7 +1150,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/1e28c6f/src/property-decorators/validator.ts#L97">property-decorators/validator.ts:97</a></li>
+									<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/d6de3af/src/property-decorators/validator.ts#L97">property-decorators/validator.ts:97</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -987,7 +1189,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/1e28c6f/src/property-decorators/validator.ts#L20">property-decorators/validator.ts:20</a></li>
+									<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/d6de3af/src/property-decorators/validator.ts#L20">property-decorators/validator.ts:20</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1010,7 +1212,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/1e28c6f/src/class-decorators/mixin.ts#L41">class-decorators/mixin.ts:41</a></li>
+									<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/d6de3af/src/class-decorators/mixin.ts#L41">class-decorators/mixin.ts:41</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1036,7 +1238,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/1e28c6f/src/class-decorators/mixin.ts#L53">class-decorators/mixin.ts:53</a></li>
+									<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/d6de3af/src/class-decorators/mixin.ts#L53">class-decorators/mixin.ts:53</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1066,7 +1268,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/1e28c6f/src/property-decorators/validator.ts#L122">property-decorators/validator.ts:122</a></li>
+									<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/d6de3af/src/property-decorators/validator.ts#L122">property-decorators/validator.ts:122</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1087,7 +1289,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/1e28c6f/src/method-decorators/validator.ts#L61">method-decorators/validator.ts:61</a></li>
+									<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/d6de3af/src/method-decorators/validator.ts#L61">method-decorators/validator.ts:61</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">ParameterDecorator</span></h4>
@@ -1104,7 +1306,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/1e28c6f/src/property-decorators/validator.ts#L73">property-decorators/validator.ts:73</a></li>
+									<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/d6de3af/src/property-decorators/validator.ts#L73">property-decorators/validator.ts:73</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1143,6 +1345,38 @@
 						</li>
 					</ul>
 				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-is-not-exported">
+					<a name="propertymetadatafn" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> property<wbr>Metadata<wbr>Fn</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">property<wbr>Metadata<wbr>Fn<span class="tsd-signature-symbol">(</span>propertyMetadata<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, jsonObject<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, target<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, propertyKey<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/d6de3af/src/property-decorators/deserializer.ts#L42">property-decorators/deserializer.ts:42</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>propertyMetadata: <span class="tsd-signature-type">any</span></h5>
+								</li>
+								<li>
+									<h5>jsonObject: <span class="tsd-signature-type">any</span></h5>
+								</li>
+								<li>
+									<h5>target: <span class="tsd-signature-type">any</span></h5>
+								</li>
+								<li>
+									<h5>propertyKey: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+						</li>
+					</ul>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function">
 					<a name="regex" class="tsd-anchor"></a>
 					<h3>regex</h3>
@@ -1153,7 +1387,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/1e28c6f/src/property-decorators/validator.ts#L156">property-decorators/validator.ts:156</a></li>
+									<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/d6de3af/src/property-decorators/validator.ts#L156">property-decorators/validator.ts:156</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1176,6 +1410,35 @@
 						</li>
 					</ul>
 				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-has-type-parameter">
+					<a name="serialize" class="tsd-anchor"></a>
+					<h3>serialize</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-has-type-parameter">
+						<li class="tsd-signature tsd-kind-icon">serialize&lt;T&gt;<span class="tsd-signature-symbol">(</span>clazz<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/d6de3af/src/property-decorators/deserializer.ts#L76">property-decorators/deserializer.ts:76</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>T</h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>clazz: <span class="tsd-signature-type">T</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+						</li>
+					</ul>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function">
 					<a name="trycatch" class="tsd-anchor"></a>
 					<h3>try<wbr>Catch</h3>
@@ -1186,7 +1449,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/1e28c6f/src/method-decorators/validator.ts#L260">method-decorators/validator.ts:260</a></li>
+									<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/d6de3af/src/method-decorators/validator.ts#L260">method-decorators/validator.ts:260</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1214,7 +1477,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/1e28c6f/src/method-decorators/validator.ts#L242">method-decorators/validator.ts:242</a></li>
+									<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/d6de3af/src/method-decorators/validator.ts#L242">method-decorators/validator.ts:242</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1250,7 +1513,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/1e28c6f/src/method-decorators/validator.ts#L157">method-decorators/validator.ts:157</a></li>
+									<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/d6de3af/src/method-decorators/validator.ts#L157">method-decorators/validator.ts:157</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1290,7 +1553,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/1e28c6f/src/method-decorators/validator.ts#L182">method-decorators/validator.ts:182</a></li>
+									<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/d6de3af/src/method-decorators/validator.ts#L182">method-decorators/validator.ts:182</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1330,7 +1593,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/1e28c6f/src/method-decorators/validator.ts#L134">method-decorators/validator.ts:134</a></li>
+									<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/d6de3af/src/method-decorators/validator.ts#L134">method-decorators/validator.ts:134</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1370,7 +1633,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/1e28c6f/src/method-decorators/validator.ts#L207">method-decorators/validator.ts:207</a></li>
+									<li>Defined in <a href="https://github.com/itryapitsin2/ts-decorators/blob/d6de3af/src/method-decorators/validator.ts#L207">method-decorators/validator.ts:207</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1434,6 +1697,9 @@
 						<a href="interfaces/cacheitem.html" class="tsd-kind-icon">Cache<wbr>Item</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-has-type-parameter">
+						<a href="interfaces/jsonmetadata.html" class="tsd-kind-icon">Json<wbr>Meta<wbr>Data</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-has-type-parameter">
 						<a href="interfaces/lambda.html" class="tsd-kind-icon">Lambda</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-has-type-parameter">
@@ -1461,6 +1727,9 @@
 						<a href="globals.html#warning_color" class="tsd-kind-icon">WARNING_<wbr>COLOR</a>
 					</li>
 					<li class=" tsd-kind-variable tsd-is-not-exported">
+						<a href="globals.html#jsonmetadatakey" class="tsd-kind-icon">json<wbr>Metadata<wbr>Key</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-not-exported">
 						<a href="globals.html#maxlengthmetadatakey" class="tsd-kind-icon">max<wbr>Length<wbr>Metadata<wbr>Key</a>
 					</li>
 					<li class=" tsd-kind-variable tsd-is-not-exported">
@@ -1474,6 +1743,9 @@
 					</li>
 					<li class=" tsd-kind-variable">
 						<a href="globals.html#rulepool" class="tsd-kind-icon">rule<wbr>Pool</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#isarray" class="tsd-kind-icon">Is<wbr>Array</a>
 					</li>
 					<li class=" tsd-kind-function">
 						<a href="globals.html#isboolean" class="tsd-kind-icon">Is<wbr>Boolean</a>
@@ -1497,6 +1769,9 @@
 						<a href="globals.html#isobject" class="tsd-kind-icon">Is<wbr>Object</a>
 					</li>
 					<li class=" tsd-kind-function">
+						<a href="globals.html#isprimitive" class="tsd-kind-icon">Is<wbr>Primitive</a>
+					</li>
+					<li class=" tsd-kind-function">
 						<a href="globals.html#isstring" class="tsd-kind-icon">Is<wbr>String</a>
 					</li>
 					<li class=" tsd-kind-function">
@@ -1514,6 +1789,15 @@
 					<li class=" tsd-kind-function">
 						<a href="globals.html#deprecated" class="tsd-kind-icon">deprecated</a>
 					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#deserialize" class="tsd-kind-icon">deserialize</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#getclazz" class="tsd-kind-icon">get<wbr>Clazz</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#getjsonproperty" class="tsd-kind-icon">get<wbr>Json<wbr>Property</a>
+					</li>
 					<li class=" tsd-kind-function tsd-is-not-exported">
 						<a href="globals.html#getmixables" class="tsd-kind-icon">get<wbr>Mixables</a>
 					</li>
@@ -1522,6 +1806,9 @@
 					</li>
 					<li class=" tsd-kind-function">
 						<a href="globals.html#isemail" class="tsd-kind-icon">is<wbr>Email</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#jsonproperty" class="tsd-kind-icon">json<wbr>Property</a>
 					</li>
 					<li class=" tsd-kind-function">
 						<a href="globals.html#logmethod" class="tsd-kind-icon">log<wbr>Method</a>
@@ -1556,8 +1843,14 @@
 					<li class=" tsd-kind-function">
 						<a href="globals.html#notnull" class="tsd-kind-icon">not<wbr>Null</a>
 					</li>
+					<li class=" tsd-kind-function tsd-is-not-exported">
+						<a href="globals.html#propertymetadatafn" class="tsd-kind-icon">property<wbr>Metadata<wbr>Fn</a>
+					</li>
 					<li class=" tsd-kind-function">
 						<a href="globals.html#regex" class="tsd-kind-icon">regex</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#serialize" class="tsd-kind-icon">serialize</a>
 					</li>
 					<li class=" tsd-kind-function">
 						<a href="globals.html#trycatch" class="tsd-kind-icon">try<wbr>Catch</a>
