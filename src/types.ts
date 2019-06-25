@@ -123,6 +123,10 @@ export function IsArray(object: any): boolean {
     }
 }
 
+export function IsDate(x: any): boolean {
+    return x instanceof Date || Object.prototype.toString.call(x) === '[object Date]';
+}
+
 /**
  * Type of lambda expression with single argument
  * @typeparam R Type of outcome result. void type by default.

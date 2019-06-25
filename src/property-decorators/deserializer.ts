@@ -1,16 +1,20 @@
 import 'reflect-metadata';
-import {IsNullOrUndefined, IsPrimitive, IsString} from '../types';
+import {IsArray, IsDate, IsNullOrUndefined, IsPrimitive, IsString, Lambda1} from '../types';
 
 const jsonMetadataKey = 'json-property';
 
 export interface JsonMetaData<T> {
+    skipped?: boolean;
     name?: string;
-
-    clazz?: { new(): T }
+    clazz?: {
+        new(): T
+    }
+    fromJson?: Lambda1<Record<string, any>, Function>
+    toJson?: Lambda1<T, Record<string, any>>
 }
 
-export function jsonProperty<T>(metadata?: JsonMetaData<T> | string): any {
-    return function(target: Record<string, any>, propertyKey: string): void {
+export function jsonField<T>(metadata?: JsonMetaData<T> | string): any {
+    return function (target: Record<string, any>, propertyKey: string): void {
         if (IsNullOrUndefined(metadata)) {
             return Reflect.defineMetadata(jsonMetadataKey, {
                 name: propertyKey,
@@ -25,9 +29,23 @@ export function jsonProperty<T>(metadata?: JsonMetaData<T> | string): any {
             let metadataObject = metadata as JsonMetaData<T>;
             return Reflect.defineMetadata(jsonMetadataKey, {
                 name: metadataObject ? metadataObject.name : propertyKey,
-                clazz: metadataObject ? metadataObject.clazz : undefined
+                ...metadataObject
             }, target, propertyKey);
         }
+    };
+}
+
+export function serializable(): ClassDecorator {
+    return function (ctor: Function): void {
+
+    };
+}
+
+export function jsonIgnore(): PropertyDecorator {
+    return function (target: Record<string, any>, propertyKey: string): void {
+        return Reflect.defineMetadata(jsonMetadataKey, {
+            skipped: true,
+        }, target, propertyKey);
     };
 }
 
@@ -39,17 +57,21 @@ export function getJsonProperty<T>(target: any, propertyKey: string): JsonMetaDa
     return Reflect.getMetadata(jsonMetadataKey, target, propertyKey);
 }
 
-const propertyMetadataFn: (IJsonMetaData, jsonObject, target, propertyKey) => any = (propertyMetadata, jsonObject, target: any, propertyKey: string) => {
+const propertyMetadataFn: (IJsonMetaData, jsonObject, target, propertyKey) => any = (propertyMetadata, jsonObject, target: any, propertyKey: string): any => {
     let propertyName = propertyMetadata.name || propertyKey;
     let innerJson = jsonObject
         ? jsonObject[propertyName]
         : undefined;
 
     let clazz = getClazz(target, propertyKey);
-    if (!IsPrimitive(clazz)) {
-        return deserialize(clazz, innerJson);
-    } else {
+    if (IsPrimitive(clazz)) {
         return jsonObject ? jsonObject[propertyName] : undefined;
+    } else {
+        if (propertyMetadata.fromJson) {
+            return deserialize(propertyMetadata.fromJson(innerJson), innerJson);
+        } else {
+            return deserialize(clazz, innerJson);
+        }
     }
 };
 
@@ -73,7 +95,7 @@ export function deserialize<T>(clazz: { new(): T }, jsonObject: any): T {
     return obj;
 }
 
-export function serialize<T>(clazz: T): any {
+export function serialize<T>(clazz: T): Record<string, any> {
     if (!clazz) {
         return undefined;
     }
@@ -81,9 +103,35 @@ export function serialize<T>(clazz: T): any {
     const json: Record<string, any> = {};
 
     Object.keys(clazz).forEach((key) => {
+        console.log(`Key is ${key}`);
         let propertyMetadata: JsonMetaData<T> = getJsonProperty(clazz, key);
-        console.log(`${key}: ${propertyMetadata.name}`);
-        json[propertyMetadata.name] = clazz[key];
+        if (!propertyMetadata) {
+            json[key] = clazz[key];
+
+        } else if (IsPrimitive(clazz[key])) {
+            console.log('Primitive serialization...');
+            json[propertyMetadata.name] = clazz[key];
+
+        } else if (IsArray(clazz[key])) {
+            console.log('Array serialization...');
+            json[propertyMetadata.name || key] = Array.of(clazz[key]).map((item: any): Record<string, any> => {
+                return serialize(item);
+            });
+
+        } else if (IsDate(clazz[key])) {
+            console.log('Date serialization...');
+            const date = clazz[key] as Date;
+            json[propertyMetadata.name || key] = date.toJSON();
+
+        } else {
+            console.log('Object serialization...');
+            let obj = serialize(clazz[key]);
+            if (propertyMetadata.toJson) {
+                const tpe = propertyMetadata.toJson(clazz[key]);
+                obj = {...obj, ...tpe};
+            }
+            json[propertyMetadata.name || key] = obj;
+        }
     });
     return json;
 }
